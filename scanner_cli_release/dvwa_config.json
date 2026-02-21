@@ -1,0 +1,13 @@
+{
+    "login_url": "http://localhost/login.php",
+    "method": "POST",
+    "username_field": "username",
+    "password_field": "password",
+    "username": "admin",
+    "password": "password",
+    "success_indicator": "Logout",
+    "cookies": {
+        "security": "low",
+        "PHPSESSID": ""
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "login_url": "http://testphp.vulnweb.com/login.php",
+    "method": "POST",
+    "username_field": "uname",
+    "password_field": "pass",
+    "username": "test",
+    "password": "test",
+    "success_indicator": "Maintained by"
+}

@@ -1,0 +1,1806 @@
+{
+    "scan_metadata": {
+        "target": "http://localhost",
+        "scan_time": "2026-02-19T15:09:52.696233",
+        "duration_seconds": 12.98,
+        "threads_used": 10,
+        "authenticated": true
+    },
+    "chart_values": {
+        "labels": [
+            "Critical",
+            "High",
+            "Medium",
+            "Low",
+            "Info"
+        ],
+        "data": [
+            4,
+            0,
+            33,
+            138,
+            2
+        ]
+    },
+    "severity_summary": {
+        "Critical": 4,
+        "High": 0,
+        "Medium": 33,
+        "Low": 138,
+        "Info": 2
+    },
+    "risk_score": 868,
+    "risk_grade": "F",
+    "vulnerabilities": [
+        {
+            "name": "Session Fixation",
+            "severity": "Medium",
+            "endpoint": "http://localhost/login.php",
+            "parameter": "PHPSESSID/JSESSIONID",
+            "payload": "ScannerTestFixation123",
+            "evidence": "Server accepted and maintained the injected session ID 'ScannerTestFixation123' after login.",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Session_Fixation",
+            "owasp_id": "A07:2021-Identification and Authentication Failures"
+        },
+        {
+            "name": "Authentication Weakness",
+            "severity": "Low",
+            "endpoint": "http://localhost/login.php",
+            "parameter": "login_form",
+            "payload": "5 fast attempts",
+            "evidence": "No rate limiting (HTTP 429) or lockout detected after multiple rapid failed login attempts.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Authentication Weakness",
+            "severity": "Low",
+            "endpoint": "http://localhost/login.php",
+            "parameter": "login_form",
+            "payload": "5 fast attempts",
+            "evidence": "No rate limiting (HTTP 429) or lockout detected after multiple rapid failed login attempts.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "SQL Injection (Form-Based/Error)",
+            "severity": "Critical",
+            "endpoint": "http://localhost/setup.php#",
+            "parameter": "create_db",
+            "payload": "' OR '1'='1",
+            "evidence": "Error reflection in response",
+            "owasp_reference": "https://owasp.org/www-community/attacks/SQL_Injection",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "SQL Injection (Form-Based/Error)",
+            "severity": "Critical",
+            "endpoint": "http://localhost/setup.php#",
+            "parameter": "user_token",
+            "payload": "' OR '1'='1",
+            "evidence": "Error reflection in response",
+            "owasp_reference": "https://owasp.org/www-community/attacks/SQL_Injection",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "SQL Injection (Form-Based/Error)",
+            "severity": "Critical",
+            "endpoint": "http://localhost/setup.php#",
+            "parameter": "create_db",
+            "payload": "' OR '1'='1",
+            "evidence": "Error reflection in response",
+            "owasp_reference": "https://owasp.org/www-community/attacks/SQL_Injection",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "SQL Injection (Form-Based/Error)",
+            "severity": "Critical",
+            "endpoint": "http://localhost/setup.php#",
+            "parameter": "user_token",
+            "payload": "' OR '1'='1",
+            "evidence": "Error reflection in response",
+            "owasp_reference": "https://owasp.org/www-community/attacks/SQL_Injection",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Clickjacking (UI Redressing)",
+            "severity": "Low",
+            "endpoint": "http://localhost/security.php",
+            "parameter": "HTTP Headers",
+            "payload": "None (Header Missing)",
+            "evidence": "Missing or invalid X-Frame-Options header. Missing frame-ancestors in Content-Security-Policy.",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Clickjacking",
+            "owasp_id": "A05:2021-Security Misconfiguration"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "http://localhost/security.php",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Clickjacking (UI Redressing)",
+            "severity": "Low",
+            "endpoint": "http://localhost/setup.php",
+            "parameter": "HTTP Headers",
+            "payload": "None (Header Missing)",
+            "evidence": "Missing or invalid X-Frame-Options header. Missing frame-ancestors in Content-Security-Policy.",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Clickjacking",
+            "owasp_id": "A05:2021-Security Misconfiguration"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "http://localhost/setup.php",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Clickjacking (UI Redressing)",
+            "severity": "Low",
+            "endpoint": "http://localhost/instructions.php?doc=copying",
+            "parameter": "HTTP Headers",
+            "payload": "None (Header Missing)",
+            "evidence": "Missing or invalid X-Frame-Options header. Missing frame-ancestors in Content-Security-Policy.",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Clickjacking",
+            "owasp_id": "A05:2021-Security Misconfiguration"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "http://localhost/instructions.php?doc=copying",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Clickjacking (UI Redressing)",
+            "severity": "Low",
+            "endpoint": "http://localhost/instructions.php?doc=PHPIDS-license",
+            "parameter": "HTTP Headers",
+            "payload": "None (Header Missing)",
+            "evidence": "Missing or invalid X-Frame-Options header. Missing frame-ancestors in Content-Security-Policy.",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Clickjacking",
+            "owasp_id": "A05:2021-Security Misconfiguration"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "http://localhost/instructions.php?doc=PHPIDS-license",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Clickjacking (UI Redressing)",
+            "severity": "Low",
+            "endpoint": "http://localhost/vulnerabilities/fi/?page=file3.php",
+            "parameter": "HTTP Headers",
+            "payload": "None (Header Missing)",
+            "evidence": "Missing or invalid X-Frame-Options header. Missing frame-ancestors in Content-Security-Policy.",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Clickjacking",
+            "owasp_id": "A05:2021-Security Misconfiguration"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "http://localhost/vulnerabilities/fi/?page=file3.php",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Clickjacking (UI Redressing)",
+            "severity": "Low",
+            "endpoint": "http://localhost/docs/DVWA_v1.3.pdf",
+            "parameter": "HTTP Headers",
+            "payload": "None (Header Missing)",
+            "evidence": "Missing or invalid X-Frame-Options header. Missing frame-ancestors in Content-Security-Policy.",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Clickjacking",
+            "owasp_id": "A05:2021-Security Misconfiguration"
+        },
+        {
+            "name": "Clickjacking (UI Redressing)",
+            "severity": "Low",
+            "endpoint": "http://localhost/vulnerabilities/sqli/",
+            "parameter": "HTTP Headers",
+            "payload": "None (Header Missing)",
+            "evidence": "Missing or invalid X-Frame-Options header. Missing frame-ancestors in Content-Security-Policy.",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Clickjacking",
+            "owasp_id": "A05:2021-Security Misconfiguration"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "http://localhost/docs/DVWA_v1.3.pdf",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "http://localhost/vulnerabilities/sqli/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Clickjacking (UI Redressing)",
+            "severity": "Low",
+            "endpoint": "http://localhost/vulnerabilities/fi/?page=file1.php",
+            "parameter": "HTTP Headers",
+            "payload": "None (Header Missing)",
+            "evidence": "Missing or invalid X-Frame-Options header. Missing frame-ancestors in Content-Security-Policy.",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Clickjacking",
+            "owasp_id": "A05:2021-Security Misconfiguration"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "http://localhost/vulnerabilities/fi/?page=file1.php",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Clickjacking (UI Redressing)",
+            "severity": "Low",
+            "endpoint": "http://localhost/security.php?test=%22><script>eval(window.name)</script>",
+            "parameter": "HTTP Headers",
+            "payload": "None (Header Missing)",
+            "evidence": "Missing or invalid X-Frame-Options header. Missing frame-ancestors in Content-Security-Policy.",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Clickjacking",
+            "owasp_id": "A05:2021-Security Misconfiguration"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "http://localhost/security.php?test=%22><script>eval(window.name)</script>",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "http://localhost/vulnerabilities/upload/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Clickjacking (UI Redressing)",
+            "severity": "Low",
+            "endpoint": "http://localhost/vulnerabilities/upload/",
+            "parameter": "HTTP Headers",
+            "payload": "None (Header Missing)",
+            "evidence": "Missing or invalid X-Frame-Options header. Missing frame-ancestors in Content-Security-Policy.",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Clickjacking",
+            "owasp_id": "A05:2021-Security Misconfiguration"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "http://localhost/phpinfo.php",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Clickjacking (UI Redressing)",
+            "severity": "Low",
+            "endpoint": "http://localhost/phpinfo.php",
+            "parameter": "HTTP Headers",
+            "payload": "None (Header Missing)",
+            "evidence": "Missing or invalid X-Frame-Options header. Missing frame-ancestors in Content-Security-Policy.",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Clickjacking",
+            "owasp_id": "A05:2021-Security Misconfiguration"
+        },
+        {
+            "name": "Clickjacking (UI Redressing)",
+            "severity": "Low",
+            "endpoint": "http://localhost/about.php",
+            "parameter": "HTTP Headers",
+            "payload": "None (Header Missing)",
+            "evidence": "Missing or invalid X-Frame-Options header. Missing frame-ancestors in Content-Security-Policy.",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Clickjacking",
+            "owasp_id": "A05:2021-Security Misconfiguration"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "http://localhost/about.php",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "http://localhost/ids_log.php",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Clickjacking (UI Redressing)",
+            "severity": "Low",
+            "endpoint": "http://localhost/ids_log.php",
+            "parameter": "HTTP Headers",
+            "payload": "None (Header Missing)",
+            "evidence": "Missing or invalid X-Frame-Options header. Missing frame-ancestors in Content-Security-Policy.",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Clickjacking",
+            "owasp_id": "A05:2021-Security Misconfiguration"
+        },
+        {
+            "name": "Clickjacking (UI Redressing)",
+            "severity": "Low",
+            "endpoint": "http://localhost/vulnerabilities/fi/?page=file2.php",
+            "parameter": "HTTP Headers",
+            "payload": "None (Header Missing)",
+            "evidence": "Missing or invalid X-Frame-Options header. Missing frame-ancestors in Content-Security-Policy.",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Clickjacking",
+            "owasp_id": "A05:2021-Security Misconfiguration"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "http://localhost/vulnerabilities/fi/?page=file2.php",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Clickjacking (UI Redressing)",
+            "severity": "Low",
+            "endpoint": "http://localhost/instructions.php?doc=readme",
+            "parameter": "HTTP Headers",
+            "payload": "None (Header Missing)",
+            "evidence": "Missing or invalid X-Frame-Options header. Missing frame-ancestors in Content-Security-Policy.",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Clickjacking",
+            "owasp_id": "A05:2021-Security Misconfiguration"
+        },
+        {
+            "name": "Clickjacking (UI Redressing)",
+            "severity": "Low",
+            "endpoint": "http://localhost/vulnerabilities/weak_id/",
+            "parameter": "HTTP Headers",
+            "payload": "None (Header Missing)",
+            "evidence": "Missing or invalid X-Frame-Options header. Missing frame-ancestors in Content-Security-Policy.",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Clickjacking",
+            "owasp_id": "A05:2021-Security Misconfiguration"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "http://localhost/vulnerabilities/weak_id/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Clickjacking (UI Redressing)",
+            "severity": "Low",
+            "endpoint": "http://localhost/logout.php",
+            "parameter": "HTTP Headers",
+            "payload": "None (Header Missing)",
+            "evidence": "Missing or invalid X-Frame-Options header. Missing frame-ancestors in Content-Security-Policy.",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Clickjacking",
+            "owasp_id": "A05:2021-Security Misconfiguration"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "http://localhost/logout.php",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "http://localhost/instructions.php?doc=readme",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "http://localhost/vulnerabilities/xss_d/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Clickjacking (UI Redressing)",
+            "severity": "Low",
+            "endpoint": "http://localhost/vulnerabilities/xss_d/",
+            "parameter": "HTTP Headers",
+            "payload": "None (Header Missing)",
+            "evidence": "Missing or invalid X-Frame-Options header. Missing frame-ancestors in Content-Security-Policy.",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Clickjacking",
+            "owasp_id": "A05:2021-Security Misconfiguration"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "http://localhost/vulnerabilities/csrf/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Clickjacking (UI Redressing)",
+            "severity": "Low",
+            "endpoint": "http://localhost/vulnerabilities/csrf/",
+            "parameter": "HTTP Headers",
+            "payload": "None (Header Missing)",
+            "evidence": "Missing or invalid X-Frame-Options header. Missing frame-ancestors in Content-Security-Policy.",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Clickjacking",
+            "owasp_id": "A05:2021-Security Misconfiguration"
+        },
+        {
+            "name": "Clickjacking (UI Redressing)",
+            "severity": "Low",
+            "endpoint": "http://localhost/vulnerabilities/sqli_blind/",
+            "parameter": "HTTP Headers",
+            "payload": "None (Header Missing)",
+            "evidence": "Missing or invalid X-Frame-Options header. Missing frame-ancestors in Content-Security-Policy.",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Clickjacking",
+            "owasp_id": "A05:2021-Security Misconfiguration"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "http://localhost/vulnerabilities/sqli_blind/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Clickjacking (UI Redressing)",
+            "severity": "Low",
+            "endpoint": "http://localhost/vulnerabilities/fi/?page=include.php",
+            "parameter": "HTTP Headers",
+            "payload": "None (Header Missing)",
+            "evidence": "Missing or invalid X-Frame-Options header. Missing frame-ancestors in Content-Security-Policy.",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Clickjacking",
+            "owasp_id": "A05:2021-Security Misconfiguration"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "http://localhost/vulnerabilities/fi/?page=include.php",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Clickjacking (UI Redressing)",
+            "severity": "Low",
+            "endpoint": "http://localhost/instructions.php",
+            "parameter": "HTTP Headers",
+            "payload": "None (Header Missing)",
+            "evidence": "Missing or invalid X-Frame-Options header. Missing frame-ancestors in Content-Security-Policy.",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Clickjacking",
+            "owasp_id": "A05:2021-Security Misconfiguration"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "http://localhost/instructions.php",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Clickjacking (UI Redressing)",
+            "severity": "Low",
+            "endpoint": "http://localhost/vulnerabilities/javascript/",
+            "parameter": "HTTP Headers",
+            "payload": "None (Header Missing)",
+            "evidence": "Missing or invalid X-Frame-Options header. Missing frame-ancestors in Content-Security-Policy.",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Clickjacking",
+            "owasp_id": "A05:2021-Security Misconfiguration"
+        },
+        {
+            "name": "Clickjacking (UI Redressing)",
+            "severity": "Low",
+            "endpoint": "http://localhost/",
+            "parameter": "HTTP Headers",
+            "payload": "None (Header Missing)",
+            "evidence": "Missing or invalid X-Frame-Options header. Missing frame-ancestors in Content-Security-Policy.",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Clickjacking",
+            "owasp_id": "A05:2021-Security Misconfiguration"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "http://localhost/vulnerabilities/javascript/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "http://localhost/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Clickjacking (UI Redressing)",
+            "severity": "Low",
+            "endpoint": "http://localhost/vulnerabilities/brute/",
+            "parameter": "HTTP Headers",
+            "payload": "None (Header Missing)",
+            "evidence": "Missing or invalid X-Frame-Options header. Missing frame-ancestors in Content-Security-Policy.",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Clickjacking",
+            "owasp_id": "A05:2021-Security Misconfiguration"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "http://localhost/vulnerabilities/brute/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Clickjacking (UI Redressing)",
+            "severity": "Low",
+            "endpoint": "http://localhost/vulnerabilities/csp/",
+            "parameter": "HTTP Headers",
+            "payload": "None (Header Missing)",
+            "evidence": "Missing or invalid X-Frame-Options header. Missing frame-ancestors in Content-Security-Policy.",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Clickjacking",
+            "owasp_id": "A05:2021-Security Misconfiguration"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "http://localhost/vulnerabilities/csp/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Clickjacking (UI Redressing)",
+            "severity": "Low",
+            "endpoint": "http://localhost/security.php?phpids=on",
+            "parameter": "HTTP Headers",
+            "payload": "None (Header Missing)",
+            "evidence": "Missing or invalid X-Frame-Options header. Missing frame-ancestors in Content-Security-Policy.",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Clickjacking",
+            "owasp_id": "A05:2021-Security Misconfiguration"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "http://localhost/security.php?phpids=on",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Clickjacking (UI Redressing)",
+            "severity": "Low",
+            "endpoint": "http://localhost/instructions.php?doc=changelog",
+            "parameter": "HTTP Headers",
+            "payload": "None (Header Missing)",
+            "evidence": "Missing or invalid X-Frame-Options header. Missing frame-ancestors in Content-Security-Policy.",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Clickjacking",
+            "owasp_id": "A05:2021-Security Misconfiguration"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "http://localhost/instructions.php?doc=changelog",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Clickjacking (UI Redressing)",
+            "severity": "Low",
+            "endpoint": "http://localhost/vulnerabilities/captcha/",
+            "parameter": "HTTP Headers",
+            "payload": "None (Header Missing)",
+            "evidence": "Missing or invalid X-Frame-Options header. Missing frame-ancestors in Content-Security-Policy.",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Clickjacking",
+            "owasp_id": "A05:2021-Security Misconfiguration"
+        },
+        {
+            "name": "Clickjacking (UI Redressing)",
+            "severity": "Low",
+            "endpoint": "http://localhost/vulnerabilities/xss_r/",
+            "parameter": "HTTP Headers",
+            "payload": "None (Header Missing)",
+            "evidence": "Missing or invalid X-Frame-Options header. Missing frame-ancestors in Content-Security-Policy.",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Clickjacking",
+            "owasp_id": "A05:2021-Security Misconfiguration"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "http://localhost/vulnerabilities/captcha/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "http://localhost/vulnerabilities/xss_r/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Clickjacking (UI Redressing)",
+            "severity": "Low",
+            "endpoint": "http://localhost",
+            "parameter": "HTTP Headers",
+            "payload": "None (Header Missing)",
+            "evidence": "Missing or invalid X-Frame-Options header. Missing frame-ancestors in Content-Security-Policy.",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Clickjacking",
+            "owasp_id": "A05:2021-Security Misconfiguration"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "http://localhost",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Clickjacking (UI Redressing)",
+            "severity": "Low",
+            "endpoint": "http://localhost/vulnerabilities/exec/",
+            "parameter": "HTTP Headers",
+            "payload": "None (Header Missing)",
+            "evidence": "Missing or invalid X-Frame-Options header. Missing frame-ancestors in Content-Security-Policy.",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Clickjacking",
+            "owasp_id": "A05:2021-Security Misconfiguration"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "http://localhost/vulnerabilities/exec/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Clickjacking (UI Redressing)",
+            "severity": "Low",
+            "endpoint": "http://localhost/vulnerabilities/xss_s/",
+            "parameter": "HTTP Headers",
+            "payload": "None (Header Missing)",
+            "evidence": "Missing or invalid X-Frame-Options header. Missing frame-ancestors in Content-Security-Policy.",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Clickjacking",
+            "owasp_id": "A05:2021-Security Misconfiguration"
+        },
+        {
+            "name": "Clickjacking (UI Redressing)",
+            "severity": "Low",
+            "endpoint": "http://localhost/instructions.php?doc=PDF",
+            "parameter": "HTTP Headers",
+            "payload": "None (Header Missing)",
+            "evidence": "Missing or invalid X-Frame-Options header. Missing frame-ancestors in Content-Security-Policy.",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Clickjacking",
+            "owasp_id": "A05:2021-Security Misconfiguration"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "http://localhost/vulnerabilities/xss_s/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "http://localhost/instructions.php?doc=PDF",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Clickjacking (UI Redressing)",
+            "severity": "Low",
+            "endpoint": "http://localhost/security.php",
+            "parameter": "HTTP Headers",
+            "payload": "None (Header Missing)",
+            "evidence": "Missing or invalid X-Frame-Options header. Missing frame-ancestors in Content-Security-Policy.",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Clickjacking",
+            "owasp_id": "A05:2021-Security Misconfiguration"
+        },
+        {
+            "name": "Clickjacking (UI Redressing)",
+            "severity": "Low",
+            "endpoint": "http://localhost/setup.php",
+            "parameter": "HTTP Headers",
+            "payload": "None (Header Missing)",
+            "evidence": "Missing or invalid X-Frame-Options header. Missing frame-ancestors in Content-Security-Policy.",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Clickjacking",
+            "owasp_id": "A05:2021-Security Misconfiguration"
+        },
+        {
+            "name": "Clickjacking (UI Redressing)",
+            "severity": "Low",
+            "endpoint": "http://localhost/instructions.php?doc=copying",
+            "parameter": "HTTP Headers",
+            "payload": "None (Header Missing)",
+            "evidence": "Missing or invalid X-Frame-Options header. Missing frame-ancestors in Content-Security-Policy.",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Clickjacking",
+            "owasp_id": "A05:2021-Security Misconfiguration"
+        },
+        {
+            "name": "Clickjacking (UI Redressing)",
+            "severity": "Low",
+            "endpoint": "http://localhost/instructions.php?doc=PHPIDS-license",
+            "parameter": "HTTP Headers",
+            "payload": "None (Header Missing)",
+            "evidence": "Missing or invalid X-Frame-Options header. Missing frame-ancestors in Content-Security-Policy.",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Clickjacking",
+            "owasp_id": "A05:2021-Security Misconfiguration"
+        },
+        {
+            "name": "Clickjacking (UI Redressing)",
+            "severity": "Low",
+            "endpoint": "http://localhost/vulnerabilities/fi/?page=file3.php",
+            "parameter": "HTTP Headers",
+            "payload": "None (Header Missing)",
+            "evidence": "Missing or invalid X-Frame-Options header. Missing frame-ancestors in Content-Security-Policy.",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Clickjacking",
+            "owasp_id": "A05:2021-Security Misconfiguration"
+        },
+        {
+            "name": "Clickjacking (UI Redressing)",
+            "severity": "Low",
+            "endpoint": "http://localhost/docs/DVWA_v1.3.pdf",
+            "parameter": "HTTP Headers",
+            "payload": "None (Header Missing)",
+            "evidence": "Missing or invalid X-Frame-Options header. Missing frame-ancestors in Content-Security-Policy.",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Clickjacking",
+            "owasp_id": "A05:2021-Security Misconfiguration"
+        },
+        {
+            "name": "Clickjacking (UI Redressing)",
+            "severity": "Low",
+            "endpoint": "http://localhost/vulnerabilities/sqli/",
+            "parameter": "HTTP Headers",
+            "payload": "None (Header Missing)",
+            "evidence": "Missing or invalid X-Frame-Options header. Missing frame-ancestors in Content-Security-Policy.",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Clickjacking",
+            "owasp_id": "A05:2021-Security Misconfiguration"
+        },
+        {
+            "name": "Clickjacking (UI Redressing)",
+            "severity": "Low",
+            "endpoint": "http://localhost/vulnerabilities/fi/?page=file1.php",
+            "parameter": "HTTP Headers",
+            "payload": "None (Header Missing)",
+            "evidence": "Missing or invalid X-Frame-Options header. Missing frame-ancestors in Content-Security-Policy.",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Clickjacking",
+            "owasp_id": "A05:2021-Security Misconfiguration"
+        },
+        {
+            "name": "Clickjacking (UI Redressing)",
+            "severity": "Low",
+            "endpoint": "http://localhost/security.php?test=%22><script>eval(window.name)</script>",
+            "parameter": "HTTP Headers",
+            "payload": "None (Header Missing)",
+            "evidence": "Missing or invalid X-Frame-Options header. Missing frame-ancestors in Content-Security-Policy.",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Clickjacking",
+            "owasp_id": "A05:2021-Security Misconfiguration"
+        },
+        {
+            "name": "Clickjacking (UI Redressing)",
+            "severity": "Low",
+            "endpoint": "http://localhost/vulnerabilities/upload/",
+            "parameter": "HTTP Headers",
+            "payload": "None (Header Missing)",
+            "evidence": "Missing or invalid X-Frame-Options header. Missing frame-ancestors in Content-Security-Policy.",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Clickjacking",
+            "owasp_id": "A05:2021-Security Misconfiguration"
+        },
+        {
+            "name": "Clickjacking (UI Redressing)",
+            "severity": "Low",
+            "endpoint": "http://localhost/phpinfo.php",
+            "parameter": "HTTP Headers",
+            "payload": "None (Header Missing)",
+            "evidence": "Missing or invalid X-Frame-Options header. Missing frame-ancestors in Content-Security-Policy.",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Clickjacking",
+            "owasp_id": "A05:2021-Security Misconfiguration"
+        },
+        {
+            "name": "Clickjacking (UI Redressing)",
+            "severity": "Low",
+            "endpoint": "http://localhost/about.php",
+            "parameter": "HTTP Headers",
+            "payload": "None (Header Missing)",
+            "evidence": "Missing or invalid X-Frame-Options header. Missing frame-ancestors in Content-Security-Policy.",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Clickjacking",
+            "owasp_id": "A05:2021-Security Misconfiguration"
+        },
+        {
+            "name": "Clickjacking (UI Redressing)",
+            "severity": "Low",
+            "endpoint": "http://localhost/ids_log.php",
+            "parameter": "HTTP Headers",
+            "payload": "None (Header Missing)",
+            "evidence": "Missing or invalid X-Frame-Options header. Missing frame-ancestors in Content-Security-Policy.",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Clickjacking",
+            "owasp_id": "A05:2021-Security Misconfiguration"
+        },
+        {
+            "name": "Clickjacking (UI Redressing)",
+            "severity": "Low",
+            "endpoint": "http://localhost/vulnerabilities/fi/?page=file2.php",
+            "parameter": "HTTP Headers",
+            "payload": "None (Header Missing)",
+            "evidence": "Missing or invalid X-Frame-Options header. Missing frame-ancestors in Content-Security-Policy.",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Clickjacking",
+            "owasp_id": "A05:2021-Security Misconfiguration"
+        },
+        {
+            "name": "Clickjacking (UI Redressing)",
+            "severity": "Low",
+            "endpoint": "http://localhost/instructions.php?doc=readme",
+            "parameter": "HTTP Headers",
+            "payload": "None (Header Missing)",
+            "evidence": "Missing or invalid X-Frame-Options header. Missing frame-ancestors in Content-Security-Policy.",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Clickjacking",
+            "owasp_id": "A05:2021-Security Misconfiguration"
+        },
+        {
+            "name": "Clickjacking (UI Redressing)",
+            "severity": "Low",
+            "endpoint": "http://localhost/vulnerabilities/weak_id/",
+            "parameter": "HTTP Headers",
+            "payload": "None (Header Missing)",
+            "evidence": "Missing or invalid X-Frame-Options header. Missing frame-ancestors in Content-Security-Policy.",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Clickjacking",
+            "owasp_id": "A05:2021-Security Misconfiguration"
+        },
+        {
+            "name": "Clickjacking (UI Redressing)",
+            "severity": "Low",
+            "endpoint": "http://localhost/logout.php",
+            "parameter": "HTTP Headers",
+            "payload": "None (Header Missing)",
+            "evidence": "Missing or invalid X-Frame-Options header. Missing frame-ancestors in Content-Security-Policy.",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Clickjacking",
+            "owasp_id": "A05:2021-Security Misconfiguration"
+        },
+        {
+            "name": "Clickjacking (UI Redressing)",
+            "severity": "Low",
+            "endpoint": "http://localhost/vulnerabilities/xss_d/",
+            "parameter": "HTTP Headers",
+            "payload": "None (Header Missing)",
+            "evidence": "Missing or invalid X-Frame-Options header. Missing frame-ancestors in Content-Security-Policy.",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Clickjacking",
+            "owasp_id": "A05:2021-Security Misconfiguration"
+        },
+        {
+            "name": "Clickjacking (UI Redressing)",
+            "severity": "Low",
+            "endpoint": "http://localhost/vulnerabilities/csrf/",
+            "parameter": "HTTP Headers",
+            "payload": "None (Header Missing)",
+            "evidence": "Missing or invalid X-Frame-Options header. Missing frame-ancestors in Content-Security-Policy.",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Clickjacking",
+            "owasp_id": "A05:2021-Security Misconfiguration"
+        },
+        {
+            "name": "Clickjacking (UI Redressing)",
+            "severity": "Low",
+            "endpoint": "http://localhost/vulnerabilities/sqli_blind/",
+            "parameter": "HTTP Headers",
+            "payload": "None (Header Missing)",
+            "evidence": "Missing or invalid X-Frame-Options header. Missing frame-ancestors in Content-Security-Policy.",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Clickjacking",
+            "owasp_id": "A05:2021-Security Misconfiguration"
+        },
+        {
+            "name": "Clickjacking (UI Redressing)",
+            "severity": "Low",
+            "endpoint": "http://localhost/vulnerabilities/fi/?page=include.php",
+            "parameter": "HTTP Headers",
+            "payload": "None (Header Missing)",
+            "evidence": "Missing or invalid X-Frame-Options header. Missing frame-ancestors in Content-Security-Policy.",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Clickjacking",
+            "owasp_id": "A05:2021-Security Misconfiguration"
+        },
+        {
+            "name": "Clickjacking (UI Redressing)",
+            "severity": "Low",
+            "endpoint": "http://localhost/instructions.php",
+            "parameter": "HTTP Headers",
+            "payload": "None (Header Missing)",
+            "evidence": "Missing or invalid X-Frame-Options header. Missing frame-ancestors in Content-Security-Policy.",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Clickjacking",
+            "owasp_id": "A05:2021-Security Misconfiguration"
+        },
+        {
+            "name": "Clickjacking (UI Redressing)",
+            "severity": "Low",
+            "endpoint": "http://localhost/vulnerabilities/javascript/",
+            "parameter": "HTTP Headers",
+            "payload": "None (Header Missing)",
+            "evidence": "Missing or invalid X-Frame-Options header. Missing frame-ancestors in Content-Security-Policy.",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Clickjacking",
+            "owasp_id": "A05:2021-Security Misconfiguration"
+        },
+        {
+            "name": "Clickjacking (UI Redressing)",
+            "severity": "Low",
+            "endpoint": "http://localhost/",
+            "parameter": "HTTP Headers",
+            "payload": "None (Header Missing)",
+            "evidence": "Missing or invalid X-Frame-Options header. Missing frame-ancestors in Content-Security-Policy.",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Clickjacking",
+            "owasp_id": "A05:2021-Security Misconfiguration"
+        },
+        {
+            "name": "Clickjacking (UI Redressing)",
+            "severity": "Low",
+            "endpoint": "http://localhost/vulnerabilities/brute/",
+            "parameter": "HTTP Headers",
+            "payload": "None (Header Missing)",
+            "evidence": "Missing or invalid X-Frame-Options header. Missing frame-ancestors in Content-Security-Policy.",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Clickjacking",
+            "owasp_id": "A05:2021-Security Misconfiguration"
+        },
+        {
+            "name": "Clickjacking (UI Redressing)",
+            "severity": "Low",
+            "endpoint": "http://localhost/vulnerabilities/csp/",
+            "parameter": "HTTP Headers",
+            "payload": "None (Header Missing)",
+            "evidence": "Missing or invalid X-Frame-Options header. Missing frame-ancestors in Content-Security-Policy.",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Clickjacking",
+            "owasp_id": "A05:2021-Security Misconfiguration"
+        },
+        {
+            "name": "Clickjacking (UI Redressing)",
+            "severity": "Low",
+            "endpoint": "http://localhost/security.php?phpids=on",
+            "parameter": "HTTP Headers",
+            "payload": "None (Header Missing)",
+            "evidence": "Missing or invalid X-Frame-Options header. Missing frame-ancestors in Content-Security-Policy.",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Clickjacking",
+            "owasp_id": "A05:2021-Security Misconfiguration"
+        },
+        {
+            "name": "Clickjacking (UI Redressing)",
+            "severity": "Low",
+            "endpoint": "http://localhost/instructions.php?doc=changelog",
+            "parameter": "HTTP Headers",
+            "payload": "None (Header Missing)",
+            "evidence": "Missing or invalid X-Frame-Options header. Missing frame-ancestors in Content-Security-Policy.",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Clickjacking",
+            "owasp_id": "A05:2021-Security Misconfiguration"
+        },
+        {
+            "name": "Clickjacking (UI Redressing)",
+            "severity": "Low",
+            "endpoint": "http://localhost/vulnerabilities/captcha/",
+            "parameter": "HTTP Headers",
+            "payload": "None (Header Missing)",
+            "evidence": "Missing or invalid X-Frame-Options header. Missing frame-ancestors in Content-Security-Policy.",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Clickjacking",
+            "owasp_id": "A05:2021-Security Misconfiguration"
+        },
+        {
+            "name": "Clickjacking (UI Redressing)",
+            "severity": "Low",
+            "endpoint": "http://localhost/vulnerabilities/xss_r/",
+            "parameter": "HTTP Headers",
+            "payload": "None (Header Missing)",
+            "evidence": "Missing or invalid X-Frame-Options header. Missing frame-ancestors in Content-Security-Policy.",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Clickjacking",
+            "owasp_id": "A05:2021-Security Misconfiguration"
+        },
+        {
+            "name": "Clickjacking (UI Redressing)",
+            "severity": "Low",
+            "endpoint": "http://localhost",
+            "parameter": "HTTP Headers",
+            "payload": "None (Header Missing)",
+            "evidence": "Missing or invalid X-Frame-Options header. Missing frame-ancestors in Content-Security-Policy.",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Clickjacking",
+            "owasp_id": "A05:2021-Security Misconfiguration"
+        },
+        {
+            "name": "Clickjacking (UI Redressing)",
+            "severity": "Low",
+            "endpoint": "http://localhost/vulnerabilities/exec/",
+            "parameter": "HTTP Headers",
+            "payload": "None (Header Missing)",
+            "evidence": "Missing or invalid X-Frame-Options header. Missing frame-ancestors in Content-Security-Policy.",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Clickjacking",
+            "owasp_id": "A05:2021-Security Misconfiguration"
+        },
+        {
+            "name": "Clickjacking (UI Redressing)",
+            "severity": "Low",
+            "endpoint": "http://localhost/vulnerabilities/xss_s/",
+            "parameter": "HTTP Headers",
+            "payload": "None (Header Missing)",
+            "evidence": "Missing or invalid X-Frame-Options header. Missing frame-ancestors in Content-Security-Policy.",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Clickjacking",
+            "owasp_id": "A05:2021-Security Misconfiguration"
+        },
+        {
+            "name": "Clickjacking (UI Redressing)",
+            "severity": "Low",
+            "endpoint": "http://localhost/instructions.php?doc=PDF",
+            "parameter": "HTTP Headers",
+            "payload": "None (Header Missing)",
+            "evidence": "Missing or invalid X-Frame-Options header. Missing frame-ancestors in Content-Security-Policy.",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Clickjacking",
+            "owasp_id": "A05:2021-Security Misconfiguration"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "http://localhost/security.php",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "http://localhost/setup.php",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "http://localhost/instructions.php?doc=copying",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "http://localhost/instructions.php?doc=PHPIDS-license",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "http://localhost/vulnerabilities/fi/?page=file3.php",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "http://localhost/docs/DVWA_v1.3.pdf",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "http://localhost/vulnerabilities/sqli/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "http://localhost/vulnerabilities/fi/?page=file1.php",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "http://localhost/security.php?test=%22><script>eval(window.name)</script>",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "http://localhost/vulnerabilities/upload/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "http://localhost/phpinfo.php",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "http://localhost/about.php",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "http://localhost/ids_log.php",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "http://localhost/vulnerabilities/fi/?page=file2.php",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "http://localhost/vulnerabilities/weak_id/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "http://localhost/logout.php",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "http://localhost/instructions.php?doc=readme",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "http://localhost/vulnerabilities/xss_d/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "http://localhost/vulnerabilities/csrf/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "http://localhost/vulnerabilities/sqli_blind/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "http://localhost/vulnerabilities/fi/?page=include.php",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "http://localhost/instructions.php",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "http://localhost/vulnerabilities/javascript/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "http://localhost/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "http://localhost/vulnerabilities/brute/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "http://localhost/vulnerabilities/csp/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "http://localhost/security.php?phpids=on",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "http://localhost/instructions.php?doc=changelog",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "http://localhost/vulnerabilities/captcha/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "http://localhost/vulnerabilities/xss_r/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "http://localhost",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "http://localhost/vulnerabilities/exec/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "http://localhost/vulnerabilities/xss_s/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "http://localhost/instructions.php?doc=PDF",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Sensitive File Exposure",
+            "severity": "Info",
+            "endpoint": "http://localhost/robots.txt",
+            "parameter": "robots.txt",
+            "payload": "GET /robots.txt",
+            "evidence": "Found accessible file 'robots.txt' with status 200. Content snippet: User-agent: *\r\nDisallow: /...",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Sensitive File Exposure",
+            "severity": "Info",
+            "endpoint": "http://localhost/robots.txt",
+            "parameter": "robots.txt",
+            "payload": "GET /robots.txt",
+            "evidence": "Found accessible file 'robots.txt' with status 200. Content snippet: User-agent: *\r\nDisallow: /...",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing CSRF",
+            "severity": "Medium",
+            "endpoint": "http://localhost/setup.php#",
+            "parameter": "Form",
+            "payload": "-",
+            "evidence": "No token",
+            "owasp_reference": "https://owasp.org/www-community/attacks/csrf",
+            "owasp_id": "A01:2021-Broken Access Control"
+        },
+        {
+            "name": "Missing CSRF",
+            "severity": "Medium",
+            "endpoint": "http://localhost/vulnerabilities/exec/#",
+            "parameter": "Form",
+            "payload": "-",
+            "evidence": "No token",
+            "owasp_reference": "https://owasp.org/www-community/attacks/csrf",
+            "owasp_id": "A01:2021-Broken Access Control"
+        },
+        {
+            "name": "Missing CSRF",
+            "severity": "Medium",
+            "endpoint": "http://localhost/vulnerabilities/captcha/#",
+            "parameter": "Form",
+            "payload": "-",
+            "evidence": "No token",
+            "owasp_reference": "https://owasp.org/www-community/attacks/csrf",
+            "owasp_id": "A01:2021-Broken Access Control"
+        },
+        {
+            "name": "Missing CSRF",
+            "severity": "Medium",
+            "endpoint": "http://localhost/vulnerabilities/upload/#",
+            "parameter": "Form",
+            "payload": "-",
+            "evidence": "No token",
+            "owasp_reference": "https://owasp.org/www-community/attacks/csrf",
+            "owasp_id": "A01:2021-Broken Access Control"
+        },
+        {
+            "name": "Missing CSRF",
+            "severity": "Medium",
+            "endpoint": "http://localhost/vulnerabilities/weak_id/",
+            "parameter": "Form",
+            "payload": "-",
+            "evidence": "No token",
+            "owasp_reference": "https://owasp.org/www-community/attacks/csrf",
+            "owasp_id": "A01:2021-Broken Access Control"
+        },
+        {
+            "name": "Missing CSRF",
+            "severity": "Medium",
+            "endpoint": "http://localhost/vulnerabilities/xss_s/",
+            "parameter": "Form",
+            "payload": "-",
+            "evidence": "No token",
+            "owasp_reference": "https://owasp.org/www-community/attacks/csrf",
+            "owasp_id": "A01:2021-Broken Access Control"
+        },
+        {
+            "name": "Missing CSRF",
+            "severity": "Medium",
+            "endpoint": "http://localhost/vulnerabilities/javascript/",
+            "parameter": "Form",
+            "payload": "-",
+            "evidence": "No token",
+            "owasp_reference": "https://owasp.org/www-community/attacks/csrf",
+            "owasp_id": "A01:2021-Broken Access Control"
+        },
+        {
+            "name": "Missing CSRF",
+            "severity": "Medium",
+            "endpoint": "http://localhost/security.php#",
+            "parameter": "Form",
+            "payload": "-",
+            "evidence": "No token",
+            "owasp_reference": "https://owasp.org/www-community/attacks/csrf",
+            "owasp_id": "A01:2021-Broken Access Control"
+        },
+        {
+            "name": "Missing CSRF",
+            "severity": "Medium",
+            "endpoint": "http://localhost/vulnerabilities/csp/",
+            "parameter": "Form",
+            "payload": "-",
+            "evidence": "No token",
+            "owasp_reference": "https://owasp.org/www-community/attacks/csrf",
+            "owasp_id": "A01:2021-Broken Access Control"
+        },
+        {
+            "name": "Missing CSRF",
+            "severity": "Medium",
+            "endpoint": "http://localhost/login.php",
+            "parameter": "Form",
+            "payload": "-",
+            "evidence": "No token",
+            "owasp_reference": "https://owasp.org/www-community/attacks/csrf",
+            "owasp_id": "A01:2021-Broken Access Control"
+        },
+        {
+            "name": "Missing CSRF",
+            "severity": "Medium",
+            "endpoint": "http://localhost/login.php",
+            "parameter": "Form",
+            "payload": "-",
+            "evidence": "No token",
+            "owasp_reference": "https://owasp.org/www-community/attacks/csrf",
+            "owasp_id": "A01:2021-Broken Access Control"
+        },
+        {
+            "name": "Missing CSRF",
+            "severity": "Medium",
+            "endpoint": "http://localhost/login.php",
+            "parameter": "Form",
+            "payload": "-",
+            "evidence": "No token",
+            "owasp_reference": "https://owasp.org/www-community/attacks/csrf",
+            "owasp_id": "A01:2021-Broken Access Control"
+        },
+        {
+            "name": "Missing CSRF",
+            "severity": "Medium",
+            "endpoint": "http://localhost/login.php",
+            "parameter": "Form",
+            "payload": "-",
+            "evidence": "No token",
+            "owasp_reference": "https://owasp.org/www-community/attacks/csrf",
+            "owasp_id": "A01:2021-Broken Access Control"
+        },
+        {
+            "name": "Missing CSRF",
+            "severity": "Medium",
+            "endpoint": "http://localhost/login.php",
+            "parameter": "Form",
+            "payload": "-",
+            "evidence": "No token",
+            "owasp_reference": "https://owasp.org/www-community/attacks/csrf",
+            "owasp_id": "A01:2021-Broken Access Control"
+        },
+        {
+            "name": "Missing CSRF",
+            "severity": "Medium",
+            "endpoint": "http://localhost/login.php",
+            "parameter": "Form",
+            "payload": "-",
+            "evidence": "No token",
+            "owasp_reference": "https://owasp.org/www-community/attacks/csrf",
+            "owasp_id": "A01:2021-Broken Access Control"
+        },
+        {
+            "name": "Missing CSRF",
+            "severity": "Medium",
+            "endpoint": "http://localhost/login.php",
+            "parameter": "Form",
+            "payload": "-",
+            "evidence": "No token",
+            "owasp_reference": "https://owasp.org/www-community/attacks/csrf",
+            "owasp_id": "A01:2021-Broken Access Control"
+        },
+        {
+            "name": "Missing CSRF",
+            "severity": "Medium",
+            "endpoint": "http://localhost/setup.php#",
+            "parameter": "Form",
+            "payload": "-",
+            "evidence": "No token",
+            "owasp_reference": "https://owasp.org/www-community/attacks/csrf",
+            "owasp_id": "A01:2021-Broken Access Control"
+        },
+        {
+            "name": "Missing CSRF",
+            "severity": "Medium",
+            "endpoint": "http://localhost/vulnerabilities/exec/#",
+            "parameter": "Form",
+            "payload": "-",
+            "evidence": "No token",
+            "owasp_reference": "https://owasp.org/www-community/attacks/csrf",
+            "owasp_id": "A01:2021-Broken Access Control"
+        },
+        {
+            "name": "Missing CSRF",
+            "severity": "Medium",
+            "endpoint": "http://localhost/vulnerabilities/captcha/#",
+            "parameter": "Form",
+            "payload": "-",
+            "evidence": "No token",
+            "owasp_reference": "https://owasp.org/www-community/attacks/csrf",
+            "owasp_id": "A01:2021-Broken Access Control"
+        },
+        {
+            "name": "Missing CSRF",
+            "severity": "Medium",
+            "endpoint": "http://localhost/vulnerabilities/upload/#",
+            "parameter": "Form",
+            "payload": "-",
+            "evidence": "No token",
+            "owasp_reference": "https://owasp.org/www-community/attacks/csrf",
+            "owasp_id": "A01:2021-Broken Access Control"
+        },
+        {
+            "name": "Missing CSRF",
+            "severity": "Medium",
+            "endpoint": "http://localhost/vulnerabilities/weak_id/",
+            "parameter": "Form",
+            "payload": "-",
+            "evidence": "No token",
+            "owasp_reference": "https://owasp.org/www-community/attacks/csrf",
+            "owasp_id": "A01:2021-Broken Access Control"
+        },
+        {
+            "name": "Missing CSRF",
+            "severity": "Medium",
+            "endpoint": "http://localhost/vulnerabilities/xss_s/",
+            "parameter": "Form",
+            "payload": "-",
+            "evidence": "No token",
+            "owasp_reference": "https://owasp.org/www-community/attacks/csrf",
+            "owasp_id": "A01:2021-Broken Access Control"
+        },
+        {
+            "name": "Missing CSRF",
+            "severity": "Medium",
+            "endpoint": "http://localhost/vulnerabilities/javascript/",
+            "parameter": "Form",
+            "payload": "-",
+            "evidence": "No token",
+            "owasp_reference": "https://owasp.org/www-community/attacks/csrf",
+            "owasp_id": "A01:2021-Broken Access Control"
+        },
+        {
+            "name": "Missing CSRF",
+            "severity": "Medium",
+            "endpoint": "http://localhost/security.php#",
+            "parameter": "Form",
+            "payload": "-",
+            "evidence": "No token",
+            "owasp_reference": "https://owasp.org/www-community/attacks/csrf",
+            "owasp_id": "A01:2021-Broken Access Control"
+        },
+        {
+            "name": "Missing CSRF",
+            "severity": "Medium",
+            "endpoint": "http://localhost/vulnerabilities/csp/",
+            "parameter": "Form",
+            "payload": "-",
+            "evidence": "No token",
+            "owasp_reference": "https://owasp.org/www-community/attacks/csrf",
+            "owasp_id": "A01:2021-Broken Access Control"
+        },
+        {
+            "name": "Missing CSRF",
+            "severity": "Medium",
+            "endpoint": "http://localhost/login.php",
+            "parameter": "Form",
+            "payload": "-",
+            "evidence": "No token",
+            "owasp_reference": "https://owasp.org/www-community/attacks/csrf",
+            "owasp_id": "A01:2021-Broken Access Control"
+        },
+        {
+            "name": "Missing CSRF",
+            "severity": "Medium",
+            "endpoint": "http://localhost/login.php",
+            "parameter": "Form",
+            "payload": "-",
+            "evidence": "No token",
+            "owasp_reference": "https://owasp.org/www-community/attacks/csrf",
+            "owasp_id": "A01:2021-Broken Access Control"
+        },
+        {
+            "name": "Missing CSRF",
+            "severity": "Medium",
+            "endpoint": "http://localhost/login.php",
+            "parameter": "Form",
+            "payload": "-",
+            "evidence": "No token",
+            "owasp_reference": "https://owasp.org/www-community/attacks/csrf",
+            "owasp_id": "A01:2021-Broken Access Control"
+        },
+        {
+            "name": "Missing CSRF",
+            "severity": "Medium",
+            "endpoint": "http://localhost/login.php",
+            "parameter": "Form",
+            "payload": "-",
+            "evidence": "No token",
+            "owasp_reference": "https://owasp.org/www-community/attacks/csrf",
+            "owasp_id": "A01:2021-Broken Access Control"
+        },
+        {
+            "name": "Missing CSRF",
+            "severity": "Medium",
+            "endpoint": "http://localhost/login.php",
+            "parameter": "Form",
+            "payload": "-",
+            "evidence": "No token",
+            "owasp_reference": "https://owasp.org/www-community/attacks/csrf",
+            "owasp_id": "A01:2021-Broken Access Control"
+        },
+        {
+            "name": "Missing CSRF",
+            "severity": "Medium",
+            "endpoint": "http://localhost/login.php",
+            "parameter": "Form",
+            "payload": "-",
+            "evidence": "No token",
+            "owasp_reference": "https://owasp.org/www-community/attacks/csrf",
+            "owasp_id": "A01:2021-Broken Access Control"
+        },
+        {
+            "name": "Missing CSRF",
+            "severity": "Medium",
+            "endpoint": "http://localhost/login.php",
+            "parameter": "Form",
+            "payload": "-",
+            "evidence": "No token",
+            "owasp_reference": "https://owasp.org/www-community/attacks/csrf",
+            "owasp_id": "A01:2021-Broken Access Control"
+        }
+    ]
+}

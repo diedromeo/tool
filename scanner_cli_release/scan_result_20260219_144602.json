@@ -1,0 +1,146 @@
+{
+    "scan_metadata": {
+        "target": "http://localhost",
+        "scan_time": "2026-02-19T14:46:02.676680",
+        "duration_seconds": 1.9,
+        "threads_used": 10,
+        "authenticated": true
+    },
+    "chart_values": {
+        "labels": [
+            "Critical",
+            "High",
+            "Medium",
+            "Low",
+            "Info"
+        ],
+        "data": [
+            0,
+            0,
+            3,
+            6,
+            2
+        ]
+    },
+    "severity_summary": {
+        "Critical": 0,
+        "High": 0,
+        "Medium": 3,
+        "Low": 6,
+        "Info": 2
+    },
+    "risk_score": 36,
+    "risk_grade": "C",
+    "vulnerabilities": [
+        {
+            "name": "Session Fixation",
+            "severity": "Medium",
+            "endpoint": "http://localhost/login.php",
+            "parameter": "PHPSESSID/JSESSIONID",
+            "payload": "ScannerTestFixation123",
+            "evidence": "Server accepted and maintained the injected session ID 'ScannerTestFixation123' after login.",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Session_Fixation",
+            "owasp_id": "A07:2021-Identification and Authentication Failures"
+        },
+        {
+            "name": "Authentication Weakness",
+            "severity": "Low",
+            "endpoint": "http://localhost/login.php",
+            "parameter": "login_form",
+            "payload": "5 fast attempts",
+            "evidence": "No rate limiting (HTTP 429) or lockout detected after multiple rapid failed login attempts.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Authentication Weakness",
+            "severity": "Low",
+            "endpoint": "http://localhost/login.php",
+            "parameter": "login_form",
+            "payload": "5 fast attempts",
+            "evidence": "No rate limiting (HTTP 429) or lockout detected after multiple rapid failed login attempts.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Clickjacking (UI Redressing)",
+            "severity": "Low",
+            "endpoint": "http://localhost/login.php",
+            "parameter": "HTTP Headers",
+            "payload": "None (Header Missing)",
+            "evidence": "Missing or invalid X-Frame-Options header. Missing frame-ancestors in Content-Security-Policy.",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Clickjacking",
+            "owasp_id": "A05:2021-Security Misconfiguration"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "http://localhost/login.php",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Clickjacking (UI Redressing)",
+            "severity": "Low",
+            "endpoint": "http://localhost/login.php",
+            "parameter": "HTTP Headers",
+            "payload": "None (Header Missing)",
+            "evidence": "Missing or invalid X-Frame-Options header. Missing frame-ancestors in Content-Security-Policy.",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Clickjacking",
+            "owasp_id": "A05:2021-Security Misconfiguration"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "http://localhost/login.php",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Sensitive File Exposure",
+            "severity": "Info",
+            "endpoint": "http://localhost/login.php/sitemap.xml",
+            "parameter": "sitemap.xml",
+            "payload": "GET /sitemap.xml",
+            "evidence": "Found accessible file 'sitemap.xml' with status 200. Content snippet: \r\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Str...",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Sensitive File Exposure",
+            "severity": "Info",
+            "endpoint": "http://localhost/login.php/sitemap.xml",
+            "parameter": "sitemap.xml",
+            "payload": "GET /sitemap.xml",
+            "evidence": "Found accessible file 'sitemap.xml' with status 200. Content snippet: \r\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Str...",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing CSRF",
+            "severity": "Medium",
+            "endpoint": "http://localhost/login.php",
+            "parameter": "Form",
+            "payload": "-",
+            "evidence": "No token",
+            "owasp_reference": "https://owasp.org/www-community/attacks/csrf",
+            "owasp_id": "A01:2021-Broken Access Control"
+        },
+        {
+            "name": "Missing CSRF",
+            "severity": "Medium",
+            "endpoint": "http://localhost/login.php",
+            "parameter": "Form",
+            "payload": "-",
+            "evidence": "No token",
+            "owasp_reference": "https://owasp.org/www-community/attacks/csrf",
+            "owasp_id": "A01:2021-Broken Access Control"
+        }
+    ]
+}

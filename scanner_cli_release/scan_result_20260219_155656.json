@@ -1,0 +1,803 @@
+{
+    "scan_metadata": {
+        "target": "http://localhost",
+        "scan_time": "2026-02-19T15:56:56.148183",
+        "duration_seconds": 74.29,
+        "threads_used": 10,
+        "authenticated": true
+    },
+    "chart_values": {
+        "labels": [
+            "Critical",
+            "High",
+            "Medium",
+            "Low",
+            "Info"
+        ],
+        "data": [
+            3,
+            0,
+            2,
+            3,
+            1
+        ]
+    },
+    "severity_summary": {
+        "Critical": 3,
+        "High": 0,
+        "Medium": 2,
+        "Low": 3,
+        "Info": 1
+    },
+    "risk_score": 323,
+    "risk_grade": "F",
+    "vulnerabilities": [
+        {
+            "name": "SQL Injection (Form-Based/Error)",
+            "severity": "Critical",
+            "description": "Error reflection in response",
+            "owasp_id": "N/A",
+            "owasp_reference": "https://owasp.org/www-community/attacks/SQL_Injection",
+            "affected_assets": [
+                {
+                    "url": "http://localhost/setup.php",
+                    "parameter": "create_db",
+                    "payload": "' OR '1'='1",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/setup.php",
+                    "parameter": "user_token",
+                    "payload": "' OR '1'='1",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/exec/",
+                    "parameter": "ip",
+                    "payload": "' OR '1'='1",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/sqli/",
+                    "parameter": "id",
+                    "payload": "' OR '1'='1",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/sqli/",
+                    "parameter": "Submit",
+                    "payload": "' OR '1'='1",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/xss_r/",
+                    "parameter": "name",
+                    "payload": "' OR '1'='1",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/xss_s/",
+                    "parameter": "txtName",
+                    "payload": "' OR '1'='1",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/xss_s/",
+                    "parameter": "mtxMessage",
+                    "payload": "' OR '1'='1",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/xss_s/",
+                    "parameter": "btnSign",
+                    "payload": "' OR '1'='1",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/xss_s/",
+                    "parameter": "btnClear",
+                    "payload": "' OR '1'='1",
+                    "request": "N/A",
+                    "response": "N/A"
+                }
+            ]
+        },
+        {
+            "name": "Command Injection (RCE)",
+            "severity": "Critical",
+            "description": "Found signature 'VULN_CHECK' in response body.",
+            "owasp_id": "N/A",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "affected_assets": [
+                {
+                    "url": "http://localhost/vulnerabilities/exec/",
+                    "parameter": "ip",
+                    "payload": "; echo VULN_CHECK",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/xss_r/",
+                    "parameter": "name",
+                    "payload": "; echo VULN_CHECK",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/xss_s/",
+                    "parameter": "txtName",
+                    "payload": "; echo VULN_CHECK",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/xss_s/",
+                    "parameter": "mtxMessage",
+                    "payload": "; echo VULN_CHECK",
+                    "request": "N/A",
+                    "response": "N/A"
+                }
+            ]
+        },
+        {
+            "name": "Form-based XSS (Script Injection)",
+            "severity": "Critical",
+            "description": "Unfiltered script/tag injection",
+            "owasp_id": "A03:2021-Injection",
+            "owasp_reference": "https://owasp.org/www-community/attacks/xss/",
+            "affected_assets": [
+                {
+                    "url": "http://localhost/vulnerabilities/xss_r/",
+                    "parameter": "name",
+                    "payload": "<script>alert(1)</script>",
+                    "request": "GET http://localhost/vulnerabilities/xss_r/?name=%3Cscript%3Ealert%281%29%3C%2Fscript%3E\nUser-Agent: python-requests/2.32.5\nAccept-Encoding: gzip, deflate, zstd\nAccept: */*\nConnection: keep-alive\nCookie: security=low; PHPSESSID=89rc14hg0uib2l211pf556h5s5\n\n",
+                    "response": "HTTP/1.1 200 OK\nDate: Thu, 19 Feb 2026 10:26:55 GMT\nServer: Apache/2.4.25 (Debian)\nExpires: Tue, 23 Jun 2009 12:00:00 GMT\nCache-Control: no-cache, must-revalidate\nPragma: no-cache\nX-XSS-Protection: 0\nVary: Accept-Encoding\nContent-Encoding: gzip\nContent-Length: 1400\nKeep-Alive: timeout=5, max=76\nConnection: Keep-Alive\nContent-Type: text/html;charset=utf-8\n\n\r\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\r\n\r\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\r\n\t<head>\r\n\t\t<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\r\n\r\n\t\t<title>Vulnerability: Reflected Cross Site Scripting (XSS) :: Damn Vulnerable Web Application (DVWA) v1.10 *Development*</title>\r\n\r\n\t\t<link rel=\"stylesheet\" type=\"text/css\" href=\"../../dvwa/css/main.css\" />\r\n\r\n\t\t<link rel=\"icon\" type=\"\\image/ico\" href=\"../../favicon.ico\" />\r\n\r\n\t\t<script type=\"text/javascript\" src=\"../../dvwa/js/dvwaPage.js\"></script>\r\n\r\n\t</head>\r\n\r\n\t<body class=\"home\">\r\n\t\t<div id=\"container\">\r\n\r\n\t\t\t<div id=\"header\">\r\n\r\n\t\t\t\t<img src=\"../../dvwa/images/logo.png\" alt=\"Damn Vulnerable Web Application\" />\r\n\r\n\t\t\t</div>\r\n\r\n\t\t\t<div id=\"main_menu\">\r\n\r\n\t\t\t\t<div id=\"main_menu_padded\">\r\n\t\t\t\t<ul class=\"menuBlocks\"><li class=\"\"><a href=\"../../.\">Home</a></li>\n<li class=\"\"><a href=\"../../instructions.php\">Instructions</a></li>\n<li class=\"\"><a href=\"../../setup.php\">Setup / Reset DB</a></li>\n</ul><ul class=\"menuBlocks\"><li class=\"\"><a href=\"../../vulnerabilities/brute/\">Brute Force</a></li>\n<li class=\"\"><a href=\"../../vulnerabilities/exec/\">Command Injection</a></li>\n<li class=\"\"><a href=\"../../vulnerabilities/csrf/\">CSRF</a></li>\n<li class=\"\"><a href=\"../../vulnerabilities/fi/.?page=include.php\">File Inclusion</a></li>\n<li class=\"\"><a href=\"../../vulnerabilities/upload/\">File Upload</a></li>\n<li class=\"\"><a href=\"../../vulnerabilities/captcha/\">Insecure CAPTCHA</a></li>\n<li class=\"\"><a href=\"../../vulnerabilities/sqli/\">SQL Injection</a></li>\n<li class=\"\"><a href=\"../../vulnerabilities/sqli_blind/\">SQL Injection (Blind)</a></li>\n<li class=\"\"><a href=\"../../vulnerabilities/weak_id/\">Weak Session IDs</a></li>\n<li class=\"\"><a href=\"../../vulnerabilities/xss_d/\">XSS (DOM)</a></li>\n<li class=\"selected\"><a href=\"../../vulnerabilities/xss_r/\">XSS (Reflected)</a></li>\n<li class=\"\"><a href=\"../../vulnerabilities/xss_s/\">XSS (Stored)</a></li>\n<li class=\"\"><a href=\"../../vulnerabilities/csp/\">CSP Bypass</a></li>\n<li class=\"\"><a href=\"../../vulnerabilities/javascript/\">JavaScript</a></li>\n</ul><ul class=\"menuBlocks\"><li class=\"\"><a href=\"../../security.php\">DVWA Security</a></li>\n<li class=\"\"><a href=\"../../phpinfo.php\">PHP Info</a></li>\n<li class=\"\"><a href=\"../../about.php\">About</a></li>\n</ul><ul class=\"menuBlocks\"><li class=\"\"><a href=\"../../logout.php\">Logout</a></li>\n</ul>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t</div>\r\n\r\n\t\t\t<div id=\"main_body\">\r\n\r\n\t\t\t\t\r\n<div class=\"body_padded\">\r\n\t<h1>Vulnerability: Reflected Cross Site Scripting (XSS)</h1>\r\n\r\n\t<div class=\"vulnerable_code_area\">\r\n\t\t<form name=\"XSS\" action=\"#\" method=\"GET\">\r\n\t\t\t<p>\r\n\t\t\t\tWhat's your name?\r\n\t\t\t\t<input type=\"text\" name=\"name\">\r\n\t\t\t\t<input type=\"submit\" value=\"Submit\">\r\n\t\t\t</p>\n\r\n\t\t</form>\r\n\t\t<pre>Hello <script>alert(1)</script></pre>\r\n\t</div>\r\n\r\n\t<h2>More Information</h2>\r\n\t<ul>\r\n\t\t<li><a href=\"https://www.owasp.org/index.php/Cross-site_Scripting_(XSS)\" target=\"_blank\">https://www.owasp.org/index.php/Cross-site_Scripting_(XSS)</a></li>\r\n\t\t<li><a href=\"https://www.owasp.org/index.php/XSS_Filter_Evasion_Cheat_Sheet\" target=\"_blank\">https://www.owasp.org/index.php/XSS_Filter_Evasion_Cheat_Sheet</a></li>\r\n\t\t<li><a href=\"https://en.wikipedia.org/wiki/Cross-site_scripting\" target=\"_blank\">https://en.wikipedia.org/wiki/Cross-site_scripting</a></li>\r\n\t\t<li><a href=\"http://www.cgisecurity.com/xss-faq.html\" target=\"_blank\">http://www.cgisecurity.com/xss-faq.html</a></li>\r\n\t\t<li><a href=\"http://www.scriptalert1.com/\" target=\"_blank\">http://www.scriptalert1.com/</a></li>\r\n\t</ul>\r\n</div>\n\r\n\t\t\t\t<br /><br />\r\n\t\t\t\t\r\n\r\n\t\t\t</div>\r\n\r\n\t\t\t<div class=\"clear\">\r\n\t\t\t</div>\r\n\r\n\t\t\t<div id=\"system_info\">\r\n\t\t\t\t<input type=\"button\" value=\"View Help\" class=\"popup_button\" id='help_button' data-help-url='../../vulnerabilities/view_help.php?id=xss_r&security=low' )\"> <input type=\"button\" value=\"View Source\" class=\"popup_button\" id='source_button' data-source-url='../../vulnerabilities/view_source.php?id=xss_r&security=low' )\"> <div align=\"left\"><em>Username:</em> admin<br /><em>Security Level:</em> low<br /><em>PHPIDS:</em> disabled</div>\r\n\t\t\t</div>\r\n\r\n\t\t\t<div id=\"footer\">\r\n\r\n\t\t\t\t<p>Damn Vulnerable Web Application (DVWA) v1.10 *Development*</p>\r\n\t\t\t\t<script src='/dvwa/js/add_event_listeners.js'></script>\r\n\r\n\t\t\t</div>\r\n\r\n\t\t</div>\r\n\r\n\t</body>\r\n\r\n</html>"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/xss_s/",
+                    "parameter": "txtName",
+                    "payload": "<script>alert(1)</script>",
+                    "request": "POST http://localhost/vulnerabilities/xss_s/\nUser-Agent: python-requests/2.32.5\nAccept-Encoding: gzip, deflate, zstd\nAccept: */*\nConnection: keep-alive\nCookie: security=low; PHPSESSID=89rc14hg0uib2l211pf556h5s5\nContent-Length: 108\nContent-Type: application/x-www-form-urlencoded\n\ntxtName=%3Cscript%3Ealert%281%29%3C%2Fscript%3E&mtxMessage=audit_test&btnSign=audit_test&btnClear=audit_test",
+                    "response": "HTTP/1.1 200 OK\nDate: Thu, 19 Feb 2026 10:26:55 GMT\nServer: Apache/2.4.25 (Debian)\nExpires: Tue, 23 Jun 2009 12:00:00 GMT\nCache-Control: no-cache, must-revalidate\nPragma: no-cache\nVary: Accept-Encoding\nContent-Encoding: gzip\nContent-Length: 1629\nKeep-Alive: timeout=5, max=68\nConnection: Keep-Alive\nContent-Type: text/html;charset=utf-8\n\n\r\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\r\n\r\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\r\n\t<head>\r\n\t\t<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\r\n\r\n\t\t<title>Vulnerability: Stored Cross Site Scripting (XSS) :: Damn Vulnerable Web Application (DVWA) v1.10 *Development*</title>\r\n\r\n\t\t<link rel=\"stylesheet\" type=\"text/css\" href=\"../../dvwa/css/main.css\" />\r\n\r\n\t\t<link rel=\"icon\" type=\"\\image/ico\" href=\"../../favicon.ico\" />\r\n\r\n\t\t<script type=\"text/javascript\" src=\"../../dvwa/js/dvwaPage.js\"></script>\r\n\r\n\t</head>\r\n\r\n\t<body class=\"home\">\r\n\t\t<div id=\"container\">\r\n\r\n\t\t\t<div id=\"header\">\r\n\r\n\t\t\t\t<img src=\"../../dvwa/images/logo.png\" alt=\"Damn Vulnerable Web Application\" />\r\n\r\n\t\t\t</div>\r\n\r\n\t\t\t<div id=\"main_menu\">\r\n\r\n\t\t\t\t<div id=\"main_menu_padded\">\r\n\t\t\t\t<ul class=\"menuBlocks\"><li class=\"\"><a href=\"../../.\">Home</a></li>\n<li class=\"\"><a href=\"../../instructions.php\">Instructions</a></li>\n<li class=\"\"><a href=\"../../setup.php\">Setup / Reset DB</a></li>\n</ul><ul class=\"menuBlocks\"><li class=\"\"><a href=\"../../vulnerabilities/brute/\">Brute Force</a></li>\n<li class=\"\"><a href=\"../../vulnerabilities/exec/\">Command Injection</a></li>\n<li class=\"\"><a href=\"../../vulnerabilities/csrf/\">CSRF</a></li>\n<li class=\"\"><a href=\"../../vulnerabilities/fi/.?page=include.php\">File Inclusion</a></li>\n<li class=\"\"><a href=\"../../vulnerabilities/upload/\">File Upload</a></li>\n<li class=\"\"><a href=\"../../vulnerabilities/captcha/\">Insecure CAPTCHA</a></li>\n<li class=\"\"><a href=\"../../vulnerabilities/sqli/\">SQL Injection</a></li>\n<li class=\"\"><a href=\"../../vulnerabilities/sqli_blind/\">SQL Injection (Blind)</a></li>\n<li class=\"\"><a href=\"../../vulnerabilities/weak_id/\">Weak Session IDs</a></li>\n<li class=\"\"><a href=\"../../vulnerabilities/xss_d/\">XSS (DOM)</a></li>\n<li class=\"\"><a href=\"../../vulnerabilities/xss_r/\">XSS (Reflected)</a></li>\n<li class=\"selected\"><a href=\"../../vulnerabilities/xss_s/\">XSS (Stored)</a></li>\n<li class=\"\"><a href=\"../../vulnerabilities/csp/\">CSP Bypass</a></li>\n<li class=\"\"><a href=\"../../vulnerabilities/javascript/\">JavaScript</a></li>\n</ul><ul class=\"menuBlocks\"><li class=\"\"><a href=\"../../security.php\">DVWA Security</a></li>\n<li class=\"\"><a href=\"../../phpinfo.php\">PHP Info</a></li>\n<li class=\"\"><a href=\"../../about.php\">About</a></li>\n</ul><ul class=\"menuBlocks\"><li class=\"\"><a href=\"../../logout.php\">Logout</a></li>\n</ul>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t</div>\r\n\r\n\t\t\t<div id=\"main_body\">\r\n\r\n\t\t\t\t\r\n<div class=\"body_padded\">\r\n\t<h1>Vulnerability: Stored Cross Site Scripting (XSS)</h1>\r\n\r\n\t<div class=\"vulnerable_code_area\">\r\n\t\t<form method=\"post\" name=\"guestform\" \">\r\n\t\t\t<table width=\"550\" border=\"0\" cellpadding=\"2\" cellspacing=\"1\">\r\n\t\t\t\t<tr>\r\n\t\t\t\t\t<td width=\"100\">Name *</td>\r\n\t\t\t\t\t<td><input name=\"txtName\" type=\"text\" size=\"30\" maxlength=\"10\"></td>\r\n\t\t\t\t</tr>\r\n\t\t\t\t<tr>\r\n\t\t\t\t\t<td width=\"100\">Message *</td>\r\n\t\t\t\t\t<td><textarea name=\"mtxMessage\" cols=\"50\" rows=\"3\" maxlength=\"50\"></textarea></td>\r\n\t\t\t\t</tr>\r\n\t\t\t\t<tr>\r\n\t\t\t\t\t<td width=\"100\">&nbsp;</td>\r\n\t\t\t\t\t<td>\r\n\t\t\t\t\t\t<input name=\"btnSign\" type=\"submit\" value=\"Sign Guestbook\" onclick=\"return validateGuestbookForm(this.form);\" />\r\n\t\t\t\t\t\t<input name=\"btnClear\" type=\"submit\" value=\"Clear Guestbook\" onClick=\"return confirmClearGuestbook();\" />\r\n\t\t\t\t\t</td>\r\n\t\t\t\t</tr>\r\n\t\t\t</table>\n\r\n\t\t</form>\r\n\t\t\r\n\t</div>\r\n\t<br />\r\n\r\n\t<div id=\"guestbook_comments\">Name: <script>alert(1)</script><br />Message: audit_test<br /></div>\n\r\n\t<br />\r\n\r\n\t<h2>More Information</h2>\r\n\t<ul>\r\n\t\t<li><a href=\"https://www.owasp.org/index.php/Cross-site_Scripting_(XSS)\" target=\"_blank\">https://www.owasp.org/index.php/Cross-site_Scripting_(XSS)</a></li>\r\n\t\t<li><a href=\"https://www.owasp.org/index.php/XSS_Filter_Evasion_Cheat_Sheet\" target=\"_blank\">https://www.owasp.org/index.php/XSS_Filter_Evasion_Cheat_Sheet</a></li>\r\n\t\t<li><a href=\"https://en.wikipedia.org/wiki/Cross-site_scripting\" target=\"_blank\">https://en.wikipedia.org/wiki/Cross-site_scripting</a></li>\r\n\t\t<li><a href=\"http://www.cgisecurity.com/xss-faq.html\" target=\"_blank\">http://www.cgisecurity.com/xss-faq.html</a></li>\r\n\t\t<li><a href=\"http://www.scriptalert1.com/\" target=\"_blank\">http://www.scriptalert1.com/</a></li>\r\n\t</ul>\r\n</div>\n\r\n\t\t\t\t<br /><br />\r\n\t\t\t\t\r\n\r\n\t\t\t</div>\r\n\r\n\t\t\t<div class=\"clear\">\r\n\t\t\t</div>\r\n\r\n\t\t\t<div id=\"system_info\">\r\n\t\t\t\t<input type=\"button\" value=\"View Help\" class=\"popup_button\" id='help_button' data-help-url='../../vulnerabilities/view_help.php?id=xss_s&security=low' )\"> <input type=\"button\" value=\"View Source\" class=\"popup_button\" id='source_button' data-source-url='../../vulnerabilities/view_source.php?id=xss_s&security=low' )\"> <div align=\"left\"><em>Username:</em> admin<br /><em>Security Level:</em> low<br /><em>PHPIDS:</em> disabled</div>\r\n\t\t\t</div>\r\n\r\n\t\t\t<div id=\"footer\">\r\n\r\n\t\t\t\t<p>Damn Vulnerable Web Application (DVWA) v1.10 *Development*</p>\r\n\t\t\t\t<script src='/dvwa/js/add_event_listeners.js'></script>\r\n\r\n\t\t\t</div>\r\n\r\n\t\t</div>\r\n\r\n\t</body>\r\n\r\n</html>"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/xss_s/",
+                    "parameter": "mtxMessage",
+                    "payload": "<script>alert(1)</script>",
+                    "request": "POST http://localhost/vulnerabilities/xss_s/\nUser-Agent: python-requests/2.32.5\nAccept-Encoding: gzip, deflate, zstd\nAccept: */*\nConnection: keep-alive\nCookie: security=low; PHPSESSID=89rc14hg0uib2l211pf556h5s5\nContent-Length: 108\nContent-Type: application/x-www-form-urlencoded\n\ntxtName=audit_test&mtxMessage=%3Cscript%3Ealert%281%29%3C%2Fscript%3E&btnSign=audit_test&btnClear=audit_test",
+                    "response": "HTTP/1.1 200 OK\nDate: Thu, 19 Feb 2026 10:26:55 GMT\nServer: Apache/2.4.25 (Debian)\nExpires: Tue, 23 Jun 2009 12:00:00 GMT\nCache-Control: no-cache, must-revalidate\nPragma: no-cache\nVary: Accept-Encoding\nContent-Encoding: gzip\nContent-Length: 1629\nKeep-Alive: timeout=5, max=67\nConnection: Keep-Alive\nContent-Type: text/html;charset=utf-8\n\n\r\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\r\n\r\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\r\n\t<head>\r\n\t\t<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\r\n\r\n\t\t<title>Vulnerability: Stored Cross Site Scripting (XSS) :: Damn Vulnerable Web Application (DVWA) v1.10 *Development*</title>\r\n\r\n\t\t<link rel=\"stylesheet\" type=\"text/css\" href=\"../../dvwa/css/main.css\" />\r\n\r\n\t\t<link rel=\"icon\" type=\"\\image/ico\" href=\"../../favicon.ico\" />\r\n\r\n\t\t<script type=\"text/javascript\" src=\"../../dvwa/js/dvwaPage.js\"></script>\r\n\r\n\t</head>\r\n\r\n\t<body class=\"home\">\r\n\t\t<div id=\"container\">\r\n\r\n\t\t\t<div id=\"header\">\r\n\r\n\t\t\t\t<img src=\"../../dvwa/images/logo.png\" alt=\"Damn Vulnerable Web Application\" />\r\n\r\n\t\t\t</div>\r\n\r\n\t\t\t<div id=\"main_menu\">\r\n\r\n\t\t\t\t<div id=\"main_menu_padded\">\r\n\t\t\t\t<ul class=\"menuBlocks\"><li class=\"\"><a href=\"../../.\">Home</a></li>\n<li class=\"\"><a href=\"../../instructions.php\">Instructions</a></li>\n<li class=\"\"><a href=\"../../setup.php\">Setup / Reset DB</a></li>\n</ul><ul class=\"menuBlocks\"><li class=\"\"><a href=\"../../vulnerabilities/brute/\">Brute Force</a></li>\n<li class=\"\"><a href=\"../../vulnerabilities/exec/\">Command Injection</a></li>\n<li class=\"\"><a href=\"../../vulnerabilities/csrf/\">CSRF</a></li>\n<li class=\"\"><a href=\"../../vulnerabilities/fi/.?page=include.php\">File Inclusion</a></li>\n<li class=\"\"><a href=\"../../vulnerabilities/upload/\">File Upload</a></li>\n<li class=\"\"><a href=\"../../vulnerabilities/captcha/\">Insecure CAPTCHA</a></li>\n<li class=\"\"><a href=\"../../vulnerabilities/sqli/\">SQL Injection</a></li>\n<li class=\"\"><a href=\"../../vulnerabilities/sqli_blind/\">SQL Injection (Blind)</a></li>\n<li class=\"\"><a href=\"../../vulnerabilities/weak_id/\">Weak Session IDs</a></li>\n<li class=\"\"><a href=\"../../vulnerabilities/xss_d/\">XSS (DOM)</a></li>\n<li class=\"\"><a href=\"../../vulnerabilities/xss_r/\">XSS (Reflected)</a></li>\n<li class=\"selected\"><a href=\"../../vulnerabilities/xss_s/\">XSS (Stored)</a></li>\n<li class=\"\"><a href=\"../../vulnerabilities/csp/\">CSP Bypass</a></li>\n<li class=\"\"><a href=\"../../vulnerabilities/javascript/\">JavaScript</a></li>\n</ul><ul class=\"menuBlocks\"><li class=\"\"><a href=\"../../security.php\">DVWA Security</a></li>\n<li class=\"\"><a href=\"../../phpinfo.php\">PHP Info</a></li>\n<li class=\"\"><a href=\"../../about.php\">About</a></li>\n</ul><ul class=\"menuBlocks\"><li class=\"\"><a href=\"../../logout.php\">Logout</a></li>\n</ul>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t</div>\r\n\r\n\t\t\t<div id=\"main_body\">\r\n\r\n\t\t\t\t\r\n<div class=\"body_padded\">\r\n\t<h1>Vulnerability: Stored Cross Site Scripting (XSS)</h1>\r\n\r\n\t<div class=\"vulnerable_code_area\">\r\n\t\t<form method=\"post\" name=\"guestform\" \">\r\n\t\t\t<table width=\"550\" border=\"0\" cellpadding=\"2\" cellspacing=\"1\">\r\n\t\t\t\t<tr>\r\n\t\t\t\t\t<td width=\"100\">Name *</td>\r\n\t\t\t\t\t<td><input name=\"txtName\" type=\"text\" size=\"30\" maxlength=\"10\"></td>\r\n\t\t\t\t</tr>\r\n\t\t\t\t<tr>\r\n\t\t\t\t\t<td width=\"100\">Message *</td>\r\n\t\t\t\t\t<td><textarea name=\"mtxMessage\" cols=\"50\" rows=\"3\" maxlength=\"50\"></textarea></td>\r\n\t\t\t\t</tr>\r\n\t\t\t\t<tr>\r\n\t\t\t\t\t<td width=\"100\">&nbsp;</td>\r\n\t\t\t\t\t<td>\r\n\t\t\t\t\t\t<input name=\"btnSign\" type=\"submit\" value=\"Sign Guestbook\" onclick=\"return validateGuestbookForm(this.form);\" />\r\n\t\t\t\t\t\t<input name=\"btnClear\" type=\"submit\" value=\"Clear Guestbook\" onClick=\"return confirmClearGuestbook();\" />\r\n\t\t\t\t\t</td>\r\n\t\t\t\t</tr>\r\n\t\t\t</table>\n\r\n\t\t</form>\r\n\t\t\r\n\t</div>\r\n\t<br />\r\n\r\n\t<div id=\"guestbook_comments\">Name: audit_test<br />Message: <script>alert(1)</script><br /></div>\n\r\n\t<br />\r\n\r\n\t<h2>More Information</h2>\r\n\t<ul>\r\n\t\t<li><a href=\"https://www.owasp.org/index.php/Cross-site_Scripting_(XSS)\" target=\"_blank\">https://www.owasp.org/index.php/Cross-site_Scripting_(XSS)</a></li>\r\n\t\t<li><a href=\"https://www.owasp.org/index.php/XSS_Filter_Evasion_Cheat_Sheet\" target=\"_blank\">https://www.owasp.org/index.php/XSS_Filter_Evasion_Cheat_Sheet</a></li>\r\n\t\t<li><a href=\"https://en.wikipedia.org/wiki/Cross-site_scripting\" target=\"_blank\">https://en.wikipedia.org/wiki/Cross-site_scripting</a></li>\r\n\t\t<li><a href=\"http://www.cgisecurity.com/xss-faq.html\" target=\"_blank\">http://www.cgisecurity.com/xss-faq.html</a></li>\r\n\t\t<li><a href=\"http://www.scriptalert1.com/\" target=\"_blank\">http://www.scriptalert1.com/</a></li>\r\n\t</ul>\r\n</div>\n\r\n\t\t\t\t<br /><br />\r\n\t\t\t\t\r\n\r\n\t\t\t</div>\r\n\r\n\t\t\t<div class=\"clear\">\r\n\t\t\t</div>\r\n\r\n\t\t\t<div id=\"system_info\">\r\n\t\t\t\t<input type=\"button\" value=\"View Help\" class=\"popup_button\" id='help_button' data-help-url='../../vulnerabilities/view_help.php?id=xss_s&security=low' )\"> <input type=\"button\" value=\"View Source\" class=\"popup_button\" id='source_button' data-source-url='../../vulnerabilities/view_source.php?id=xss_s&security=low' )\"> <div align=\"left\"><em>Username:</em> admin<br /><em>Security Level:</em> low<br /><em>PHPIDS:</em> disabled</div>\r\n\t\t\t</div>\r\n\r\n\t\t\t<div id=\"footer\">\r\n\r\n\t\t\t\t<p>Damn Vulnerable Web Application (DVWA) v1.10 *Development*</p>\r\n\t\t\t\t<script src='/dvwa/js/add_event_listeners.js'></script>\r\n\r\n\t\t\t</div>\r\n\r\n\t\t</div>\r\n\r\n\t</body>\r\n\r\n</html>"
+                }
+            ]
+        },
+        {
+            "name": "Session Fixation",
+            "severity": "Medium",
+            "description": "Server accepted and maintained the injected session ID 'ScannerTestFixation123' after login.",
+            "owasp_id": "A07:2021-Identification and Authentication Failures",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Session_Fixation",
+            "affected_assets": [
+                {
+                    "url": "http://localhost/login.php",
+                    "parameter": "PHPSESSID/JSESSIONID",
+                    "payload": "ScannerTestFixation123",
+                    "request": "N/A",
+                    "response": "N/A"
+                }
+            ]
+        },
+        {
+            "name": "Missing CSRF",
+            "severity": "Medium",
+            "description": "No token",
+            "owasp_id": "A01:2021-Broken Access Control",
+            "owasp_reference": "https://owasp.org/www-community/attacks/csrf",
+            "affected_assets": [
+                {
+                    "url": "http://localhost/setup.php",
+                    "parameter": "Form",
+                    "payload": "-",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/exec/",
+                    "parameter": "Form",
+                    "payload": "-",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/upload/",
+                    "parameter": "Form",
+                    "payload": "-",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/captcha/",
+                    "parameter": "Form",
+                    "payload": "-",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/xss_s/",
+                    "parameter": "Form",
+                    "payload": "-",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/weak_id/",
+                    "parameter": "Form",
+                    "payload": "-",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/javascript/",
+                    "parameter": "Form",
+                    "payload": "-",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/csp/",
+                    "parameter": "Form",
+                    "payload": "-",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/security.php",
+                    "parameter": "Form",
+                    "payload": "-",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/login.php",
+                    "parameter": "Form",
+                    "payload": "-",
+                    "request": "N/A",
+                    "response": "N/A"
+                }
+            ]
+        },
+        {
+            "name": "Authentication Weakness",
+            "severity": "Low",
+            "description": "No rate limiting (HTTP 429) or lockout detected after multiple rapid failed login attempts.",
+            "owasp_id": "N/A",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "affected_assets": [
+                {
+                    "url": "http://localhost/login.php",
+                    "parameter": "login_form",
+                    "payload": "5 fast attempts",
+                    "request": "N/A",
+                    "response": "N/A"
+                }
+            ]
+        },
+        {
+            "name": "Clickjacking (UI Redressing)",
+            "severity": "Low",
+            "description": "Missing or invalid X-Frame-Options header. Missing frame-ancestors in Content-Security-Policy.",
+            "owasp_id": "A05:2021-Security Misconfiguration",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Clickjacking",
+            "affected_assets": [
+                {
+                    "url": "http://localhost/vulnerabilities/fi/?page=file1.php",
+                    "parameter": "HTTP Headers",
+                    "payload": "None (Header Missing)",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/logout.php",
+                    "parameter": "HTTP Headers",
+                    "payload": "None (Header Missing)",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/fi/?page=file3.php",
+                    "parameter": "HTTP Headers",
+                    "payload": "None (Header Missing)",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/security.php?phpids=on",
+                    "parameter": "HTTP Headers",
+                    "payload": "None (Header Missing)",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost",
+                    "parameter": "HTTP Headers",
+                    "payload": "None (Header Missing)",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/upload/",
+                    "parameter": "HTTP Headers",
+                    "payload": "None (Header Missing)",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/csrf/",
+                    "parameter": "HTTP Headers",
+                    "payload": "None (Header Missing)",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/sqli_blind/",
+                    "parameter": "HTTP Headers",
+                    "payload": "None (Header Missing)",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/instructions.php",
+                    "parameter": "HTTP Headers",
+                    "payload": "None (Header Missing)",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/captcha/",
+                    "parameter": "HTTP Headers",
+                    "payload": "None (Header Missing)",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/javascript/",
+                    "parameter": "HTTP Headers",
+                    "payload": "None (Header Missing)",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/instructions.php?doc=readme",
+                    "parameter": "HTTP Headers",
+                    "payload": "None (Header Missing)",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/security.php",
+                    "parameter": "HTTP Headers",
+                    "payload": "None (Header Missing)",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/xss_d/",
+                    "parameter": "HTTP Headers",
+                    "payload": "None (Header Missing)",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/instructions.php?doc=changelog",
+                    "parameter": "HTTP Headers",
+                    "payload": "None (Header Missing)",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/phpinfo.php",
+                    "parameter": "HTTP Headers",
+                    "payload": "None (Header Missing)",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/",
+                    "parameter": "HTTP Headers",
+                    "payload": "None (Header Missing)",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/xss_r/",
+                    "parameter": "HTTP Headers",
+                    "payload": "None (Header Missing)",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/csp/",
+                    "parameter": "HTTP Headers",
+                    "payload": "None (Header Missing)",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/security.php?test=%22><script>eval(window.name)</script>",
+                    "parameter": "HTTP Headers",
+                    "payload": "None (Header Missing)",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/fi/?page=include.php",
+                    "parameter": "HTTP Headers",
+                    "payload": "None (Header Missing)",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/xss_s/",
+                    "parameter": "HTTP Headers",
+                    "payload": "None (Header Missing)",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/fi/?page=file2.php",
+                    "parameter": "HTTP Headers",
+                    "payload": "None (Header Missing)",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/about.php",
+                    "parameter": "HTTP Headers",
+                    "payload": "None (Header Missing)",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/sqli/",
+                    "parameter": "HTTP Headers",
+                    "payload": "None (Header Missing)",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/setup.php",
+                    "parameter": "HTTP Headers",
+                    "payload": "None (Header Missing)",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/instructions.php?doc=copying",
+                    "parameter": "HTTP Headers",
+                    "payload": "None (Header Missing)",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/exec/",
+                    "parameter": "HTTP Headers",
+                    "payload": "None (Header Missing)",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/docs/DVWA_v1.3.pdf",
+                    "parameter": "HTTP Headers",
+                    "payload": "None (Header Missing)",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/instructions.php?doc=PDF",
+                    "parameter": "HTTP Headers",
+                    "payload": "None (Header Missing)",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/brute/",
+                    "parameter": "HTTP Headers",
+                    "payload": "None (Header Missing)",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/instructions.php?doc=PHPIDS-license",
+                    "parameter": "HTTP Headers",
+                    "payload": "None (Header Missing)",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/weak_id/",
+                    "parameter": "HTTP Headers",
+                    "payload": "None (Header Missing)",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/ids_log.php",
+                    "parameter": "HTTP Headers",
+                    "payload": "None (Header Missing)",
+                    "request": "N/A",
+                    "response": "N/A"
+                }
+            ]
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "description": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_id": "N/A",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "affected_assets": [
+                {
+                    "url": "http://localhost/vulnerabilities/fi/?page=file1.php",
+                    "parameter": "HTTP Header",
+                    "payload": "None",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/fi/?page=file3.php",
+                    "parameter": "HTTP Header",
+                    "payload": "None",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/logout.php",
+                    "parameter": "HTTP Header",
+                    "payload": "None",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/security.php?phpids=on",
+                    "parameter": "HTTP Header",
+                    "payload": "None",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost",
+                    "parameter": "HTTP Header",
+                    "payload": "None",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/upload/",
+                    "parameter": "HTTP Header",
+                    "payload": "None",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/csrf/",
+                    "parameter": "HTTP Header",
+                    "payload": "None",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/sqli_blind/",
+                    "parameter": "HTTP Header",
+                    "payload": "None",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/instructions.php",
+                    "parameter": "HTTP Header",
+                    "payload": "None",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/captcha/",
+                    "parameter": "HTTP Header",
+                    "payload": "None",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/javascript/",
+                    "parameter": "HTTP Header",
+                    "payload": "None",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/instructions.php?doc=readme",
+                    "parameter": "HTTP Header",
+                    "payload": "None",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/security.php",
+                    "parameter": "HTTP Header",
+                    "payload": "None",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/xss_d/",
+                    "parameter": "HTTP Header",
+                    "payload": "None",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/instructions.php?doc=changelog",
+                    "parameter": "HTTP Header",
+                    "payload": "None",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/phpinfo.php",
+                    "parameter": "HTTP Header",
+                    "payload": "None",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/",
+                    "parameter": "HTTP Header",
+                    "payload": "None",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/xss_r/",
+                    "parameter": "HTTP Header",
+                    "payload": "None",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/csp/",
+                    "parameter": "HTTP Header",
+                    "payload": "None",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/security.php?test=%22><script>eval(window.name)</script>",
+                    "parameter": "HTTP Header",
+                    "payload": "None",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/fi/?page=include.php",
+                    "parameter": "HTTP Header",
+                    "payload": "None",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/xss_s/",
+                    "parameter": "HTTP Header",
+                    "payload": "None",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/about.php",
+                    "parameter": "HTTP Header",
+                    "payload": "None",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/fi/?page=file2.php",
+                    "parameter": "HTTP Header",
+                    "payload": "None",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/sqli/",
+                    "parameter": "HTTP Header",
+                    "payload": "None",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/setup.php",
+                    "parameter": "HTTP Header",
+                    "payload": "None",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/exec/",
+                    "parameter": "HTTP Header",
+                    "payload": "None",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/instructions.php?doc=copying",
+                    "parameter": "HTTP Header",
+                    "payload": "None",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/docs/DVWA_v1.3.pdf",
+                    "parameter": "HTTP Header",
+                    "payload": "None",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/instructions.php?doc=PDF",
+                    "parameter": "HTTP Header",
+                    "payload": "None",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/brute/",
+                    "parameter": "HTTP Header",
+                    "payload": "None",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/instructions.php?doc=PHPIDS-license",
+                    "parameter": "HTTP Header",
+                    "payload": "None",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/weak_id/",
+                    "parameter": "HTTP Header",
+                    "payload": "None",
+                    "request": "N/A",
+                    "response": "N/A"
+                },
+                {
+                    "url": "http://localhost/ids_log.php",
+                    "parameter": "HTTP Header",
+                    "payload": "None",
+                    "request": "N/A",
+                    "response": "N/A"
+                }
+            ]
+        },
+        {
+            "name": "Sensitive File Exposure",
+            "severity": "Info",
+            "description": "Found accessible file 'robots.txt' with status 200. Content snippet: User-agent: *\r\nDisallow: /...",
+            "owasp_id": "N/A",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "affected_assets": [
+                {
+                    "url": "http://localhost/robots.txt",
+                    "parameter": "robots.txt",
+                    "payload": "GET /robots.txt",
+                    "request": "N/A",
+                    "response": "N/A"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,796 @@
+{
+    "scan_metadata": {
+        "target": "https://tachyonbyte.com",
+        "scan_time": "2026-02-19T11:27:49.412606",
+        "duration_seconds": 105.86,
+        "threads_used": 20,
+        "authenticated": false
+    },
+    "chart_values": {
+        "labels": [
+            "Critical",
+            "High",
+            "Medium",
+            "Low",
+            "Info"
+        ],
+        "data": [
+            0,
+            0,
+            8,
+            68,
+            0
+        ]
+    },
+    "severity_summary": {
+        "Critical": 0,
+        "High": 0,
+        "Medium": 8,
+        "Low": 68,
+        "Info": 0
+    },
+    "risk_score": 148,
+    "risk_grade": "C",
+    "vulnerabilities": [
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "https://tachyonbyte.com/legal/cookie-notice/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "https://tachyonbyte.com/blog/author/pareshpawar/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Sensitive Cookie without HttpOnly Flag",
+            "severity": "Medium",
+            "endpoint": "https://tachyonbyte.com/schedule-consultation/",
+            "parameter": "Cookie: csrftoken",
+            "payload": "Missing HttpOnly",
+            "evidence": "The cookie 'csrftoken' is missing the HttpOnly flag, making it accessible to client-side scripts.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "https://tachyonbyte.com/schedule-consultation/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "https://tachyonbyte.com/legal/terms-of-services/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "https://tachyonbyte.com/blog/first-post/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "https://tachyonbyte.com/products/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "https://tachyonbyte.com/blog/tag/security/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "https://tachyonbyte.com/blog/author/pranav-wadge/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "https://tachyonbyte.com/blog/author/purveshwakode/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "https://tachyonbyte.com/events/techfest-2024/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "https://tachyonbyte.com/cdn-cgi/l/email-protection",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "https://tachyonbyte.com/blog/a-complete-guide-to-containerization/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "https://tachyonbyte.com/events/hacktoberfest-2023/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "https://tachyonbyte.com/blog/gitops-security-problems-solutions/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "https://tachyonbyte.com/legal/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "https://tachyonbyte.com/blog/category/uncatergorised/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "https://tachyonbyte.com/events/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Sensitive Cookie without HttpOnly Flag",
+            "severity": "Medium",
+            "endpoint": "https://tachyonbyte.com/schedule-consultation",
+            "parameter": "Cookie: csrftoken",
+            "payload": "Missing HttpOnly",
+            "evidence": "The cookie 'csrftoken' is missing the HttpOnly flag, making it accessible to client-side scripts.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "https://tachyonbyte.com/schedule-consultation",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "https://tachyonbyte.com/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "https://tachyonbyte.com",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "https://tachyonbyte.com/about/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "https://tachyonbyte.com/blog/tag/gitops/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "https://tachyonbyte.com/blog/tag/stack/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "https://tachyonbyte.com/blog/category/technology/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "https://tachyonbyte.com/faq/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "https://tachyonbyte.com/blog/choosing-right-tech-stack/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "https://tachyonbyte.com/solutions/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Sensitive Cookie without HttpOnly Flag",
+            "severity": "Medium",
+            "endpoint": "https://tachyonbyte.com/contact",
+            "parameter": "Cookie: csrftoken",
+            "payload": "Missing HttpOnly",
+            "evidence": "The cookie 'csrftoken' is missing the HttpOnly flag, making it accessible to client-side scripts.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "https://tachyonbyte.com/contact",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "https://tachyonbyte.com/blog/tag/bussiness/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "https://tachyonbyte.com/legal/privacy-policy/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "https://tachyonbyte.com/blog/category/devops/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Sensitive Cookie without HttpOnly Flag",
+            "severity": "Medium",
+            "endpoint": "https://tachyonbyte.com/contact/",
+            "parameter": "Cookie: csrftoken",
+            "payload": "Missing HttpOnly",
+            "evidence": "The cookie 'csrftoken' is missing the HttpOnly flag, making it accessible to client-side scripts.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "https://tachyonbyte.com/contact/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "https://tachyonbyte.com/careers/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "https://tachyonbyte.com/blog/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "https://tachyonbyte.com/legal/cookie-notice/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "https://tachyonbyte.com/blog/author/pareshpawar/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Sensitive Cookie without HttpOnly Flag",
+            "severity": "Medium",
+            "endpoint": "https://tachyonbyte.com/schedule-consultation/",
+            "parameter": "Cookie: csrftoken",
+            "payload": "Missing HttpOnly",
+            "evidence": "The cookie 'csrftoken' is missing the HttpOnly flag, making it accessible to client-side scripts.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "https://tachyonbyte.com/schedule-consultation/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "https://tachyonbyte.com/legal/terms-of-services/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "https://tachyonbyte.com/blog/first-post/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "https://tachyonbyte.com/products/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "https://tachyonbyte.com/blog/tag/security/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "https://tachyonbyte.com/blog/author/pranav-wadge/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "https://tachyonbyte.com/blog/author/purveshwakode/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "https://tachyonbyte.com/events/techfest-2024/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "https://tachyonbyte.com/cdn-cgi/l/email-protection",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "https://tachyonbyte.com/blog/a-complete-guide-to-containerization/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "https://tachyonbyte.com/events/hacktoberfest-2023/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "https://tachyonbyte.com/blog/gitops-security-problems-solutions/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "https://tachyonbyte.com/legal/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "https://tachyonbyte.com/blog/category/uncatergorised/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "https://tachyonbyte.com/events/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Sensitive Cookie without HttpOnly Flag",
+            "severity": "Medium",
+            "endpoint": "https://tachyonbyte.com/schedule-consultation",
+            "parameter": "Cookie: csrftoken",
+            "payload": "Missing HttpOnly",
+            "evidence": "The cookie 'csrftoken' is missing the HttpOnly flag, making it accessible to client-side scripts.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "https://tachyonbyte.com/schedule-consultation",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "https://tachyonbyte.com/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "https://tachyonbyte.com",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "https://tachyonbyte.com/about/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "https://tachyonbyte.com/blog/tag/gitops/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "https://tachyonbyte.com/blog/tag/stack/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "https://tachyonbyte.com/blog/category/technology/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "https://tachyonbyte.com/faq/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "https://tachyonbyte.com/blog/choosing-right-tech-stack/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "https://tachyonbyte.com/solutions/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Sensitive Cookie without HttpOnly Flag",
+            "severity": "Medium",
+            "endpoint": "https://tachyonbyte.com/contact",
+            "parameter": "Cookie: csrftoken",
+            "payload": "Missing HttpOnly",
+            "evidence": "The cookie 'csrftoken' is missing the HttpOnly flag, making it accessible to client-side scripts.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "https://tachyonbyte.com/contact",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "https://tachyonbyte.com/blog/tag/bussiness/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "https://tachyonbyte.com/legal/privacy-policy/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "https://tachyonbyte.com/blog/category/devops/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Sensitive Cookie without HttpOnly Flag",
+            "severity": "Medium",
+            "endpoint": "https://tachyonbyte.com/contact/",
+            "parameter": "Cookie: csrftoken",
+            "payload": "Missing HttpOnly",
+            "evidence": "The cookie 'csrftoken' is missing the HttpOnly flag, making it accessible to client-side scripts.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "https://tachyonbyte.com/contact/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "https://tachyonbyte.com/careers/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        },
+        {
+            "name": "Missing Content Security Policy (CSP)",
+            "severity": "Low",
+            "endpoint": "https://tachyonbyte.com/blog/",
+            "parameter": "HTTP Header",
+            "payload": "None",
+            "evidence": "The response does not include a Content-Security-Policy header, increasing the risk of XSS and data injection.",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A"
+        }
+    ]
+}

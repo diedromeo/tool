@@ -1,0 +1,112 @@
+
+Advanced Vulnerability Scanner CLI - Official Documentation (v1.0)
+==================================================================
+
+1. OVERVIEW
+------------------------------------------------------------------
+This tool is a standalone, high-performance web vulnerability scanner designed for security audits. It runs from the command line and does not require a web interface or database.
+
+KEY CAPABILITIES:
+- **Speed**: Multithreaded engine (configurable threads).
+- **Real-Time**: Findings are printed instantly with ANSI colors.
+- **Reporting**: Generates structured JSON reports with PoCs.
+- **Auth**: Supports scanning behind login pages (Form-based).
+- **Checks**: SQLi, XSS, Info Disclosure, CSRF, IDOR, etc.
+
+------------------------------------------------------------------
+
+2. INSTALLATION
+------------------------------------------------------------------
+1. Ensure Python 3.8+ is installed.
+2. Install dependencies:
+   > pip install -r requirements.txt
+
+------------------------------------------------------------------
+
+3. QUICK USAGE
+------------------------------------------------------------------
+Command Structure:
+   > python scanner_cli.py -u <target_url> [options]
+
+Examples:
+
+[A] Basic Scan (Public Site)
+    > python scanner_cli.py -u http://example.com
+
+[B] Fast Scan (50 Threads)
+    > python scanner_cli.py -u http://example.com -t 50
+
+[C] Save Report to File
+    > python scanner_cli.py -u http://example.com -o myscan.json
+
+------------------------------------------------------------------
+
+4. AUTHENTICATED SCANNING (Login Support)
+------------------------------------------------------------------
+To scan pages behind a login, you must provide credentials.
+Using a configuration file is recommended.
+
+Step 1: Create 'config.json'
+{
+    "login_url": "http://example.com/login",
+    "method": "POST",
+    "username_field": "email",
+    "password_field": "password",
+    "username": "admin@example.com",
+    "password": "SecretPassword123",
+    "success_indicator": "Dashboard"
+}
+
+Step 2: Run with Config
+    > python scanner_cli.py -u http://example.com --config config.json
+
+------------------------------------------------------------------
+
+5. SUPPORTED VULNERABILITY CHECKS
+------------------------------------------------------------------
+The scanner automatically tests for:
+
+[INJECTION]
+- SQL Injection (Classic, Error-based, Boolean-based)
+- Cross-Site Scripting (Reflected, Stored, DOM)
+- Command Injection
+- SSTI (Server-Side Template Injection)
+
+[AUTHENTICATION & SESSION]
+- Weak Credentials (Brute-force protection check)
+- Session Fixation
+- Cookie Security (HttpOnly/Secure flags)
+
+[SENSITIVE DATA EXPOSURE]
+- .env files (API Keys, DB Creds)
+- .git repository exposure
+- Backup files (backup.zip, .sql)
+- Configuration files (wp-config.php, web.config)
+- Server Info (phpinfo.php, Server headers)
+
+[MISCONFIGURATION]
+- CORS (Cross-Origin Resource Sharing)
+- Missing Security Headers (CSP, HSTS, X-Frame)
+- Clickjacking
+
+[LOGICAL FLAWS]
+- IDOR (Insecure Direct Object References)
+- Open Redirects
+- CSRF (Cross-Site Request Forgery)
+
+------------------------------------------------------------------
+
+6. OUTPUT FORMAT (JSON)
+------------------------------------------------------------------
+The JSON report includes:
+- **scan_metadata**: Time, duration, target info.
+- **vulnerabilities**: List of findings with:
+  - 'name': Type of vulnerability.
+  - 'severity': Critical/High/Medium/Low/Info.
+  - 'endpoint': The URL where it was found.
+  - 'payload': The exact payload or request used.
+  - 'evidence': Proof of the vulnerability.
+  - 'owasp_reference': Link to remediation guide.
+
+------------------------------------------------------------------
+For more details run: python scanner_cli.py -h
