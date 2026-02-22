@@ -1,0 +1,165 @@
+{
+    "scan_metadata": {
+        "target": "https://cucet.cuchd.in/",
+        "scan_time": "2026-02-22T16:37:36.418162",
+        "duration_seconds": 24.87,
+        "threads_used": 20,
+        "authenticated": false
+    },
+    "chart_values": {
+        "labels": [
+            "Critical",
+            "High",
+            "Medium",
+            "Low",
+            "Info"
+        ],
+        "data": [
+            0,
+            0,
+            1,
+            3,
+            0
+        ]
+    },
+    "identified_chart_values": {
+        "labels": [
+            "Critical",
+            "High",
+            "Medium",
+            "Low",
+            "Info"
+        ],
+        "data": [
+            0,
+            0,
+            3,
+            5,
+            0
+        ]
+    },
+    "severity_summary": {
+        "Critical": 0,
+        "High": 0,
+        "Medium": 1,
+        "Low": 3,
+        "Info": 0
+    },
+    "identified_summary": {
+        "Critical": 0,
+        "High": 0,
+        "Medium": 3,
+        "Low": 5,
+        "Info": 0
+    },
+    "risk_score": 13,
+    "risk_grade": "C",
+    "vulnerabilities": [
+        {
+            "name": "CSRF",
+            "severity": "Medium",
+            "description": "Missing CSRF protection",
+            "owasp_id": "A01:2021-Broken Access Control",
+            "owasp_reference": "https://owasp.org/www-community/attacks/csrf",
+            "affected_assets": [
+                {
+                    "url": "https://cucet.cuchd.in/",
+                    "action_url": "https://cucet.cuchd.in/",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "https://cucet.cuchd.in/"
+                },
+                {
+                    "url": "https://cucet.cuchd.in/index.aspx",
+                    "action_url": "https://cucet.cuchd.in/index.aspx",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "https://cucet.cuchd.in/index.aspx"
+                },
+                {
+                    "url": "https://cucet.cuchd.in/index.aspx?redirect=login",
+                    "action_url": "https://cucet.cuchd.in/index.aspx?redirect=login",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "https://cucet.cuchd.in/index.aspx?redirect=login"
+                }
+            ]
+        },
+        {
+            "name": "Brute Force",
+            "severity": "Low",
+            "description": "Auth form found",
+            "owasp_id": "A07:2021-Identification and Authentication Failures",
+            "owasp_reference": "https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/04-Authentication_Testing/03-Testing_for_Weak_Lock_Out_Mechanism",
+            "affected_assets": [
+                {
+                    "url": "https://cucet.cuchd.in/",
+                    "parameter": "login",
+                    "action_url": "https://cucet.cuchd.in/",
+                    "input_field_name": "login",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "https://cucet.cuchd.in/?login=admin/password"
+                },
+                {
+                    "url": "https://cucet.cuchd.in/index.aspx",
+                    "parameter": "login",
+                    "action_url": "https://cucet.cuchd.in/index.aspx",
+                    "input_field_name": "login",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "https://cucet.cuchd.in/index.aspx?login=admin/password"
+                },
+                {
+                    "url": "https://cucet.cuchd.in/index.aspx?redirect=login",
+                    "parameter": "login",
+                    "action_url": "https://cucet.cuchd.in/index.aspx?redirect=login",
+                    "input_field_name": "login",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "https://cucet.cuchd.in/index.aspx?redirect=login&login=admin/password"
+                }
+            ]
+        },
+        {
+            "name": "Clickjacking (UI Redressing)",
+            "severity": "Low",
+            "description": "XFO missing",
+            "owasp_id": "A05:2021-Security Misconfiguration",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Clickjacking",
+            "affected_assets": [
+                {
+                    "url": "https://cucet.cuchd.in/syllabus.php",
+                    "action_url": "https://cucet.cuchd.in/syllabus.php",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "https://cucet.cuchd.in/syllabus.php"
+                }
+            ]
+        },
+        {
+            "name": "CSP Bypass",
+            "severity": "Low",
+            "description": "CSP missing",
+            "owasp_id": "A05:2021-Security Misconfiguration",
+            "owasp_reference": "https://owasp.org/www-project-secure-headers/",
+            "affected_assets": [
+                {
+                    "url": "https://cucet.cuchd.in/syllabus.php",
+                    "action_url": "https://cucet.cuchd.in/syllabus.php",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "https://cucet.cuchd.in/syllabus.php"
+                }
+            ]
+        }
+    ]
+}

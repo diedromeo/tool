@@ -1,0 +1,1239 @@
+{
+    "scan_metadata": {
+        "target": "http://localhost",
+        "scan_time": "2026-02-22T16:28:22.791548",
+        "duration_seconds": 3.44,
+        "threads_used": 10,
+        "authenticated": true
+    },
+    "chart_values": {
+        "labels": [
+            "Critical",
+            "High",
+            "Medium",
+            "Low",
+            "Info"
+        ],
+        "data": [
+            1,
+            6,
+            4,
+            3,
+            1
+        ]
+    },
+    "identified_chart_values": {
+        "labels": [
+            "Critical",
+            "High",
+            "Medium",
+            "Low",
+            "Info"
+        ],
+        "data": [
+            1,
+            6,
+            33,
+            54,
+            1
+        ]
+    },
+    "severity_summary": {
+        "Critical": 1,
+        "High": 6,
+        "Medium": 4,
+        "Low": 3,
+        "Info": 1
+    },
+    "identified_summary": {
+        "Critical": 1,
+        "High": 6,
+        "Medium": 33,
+        "Low": 54,
+        "Info": 1
+    },
+    "risk_score": 443,
+    "risk_grade": "F",
+    "vulnerabilities": [
+        {
+            "name": "Command Injection (RCE)",
+            "severity": "Critical",
+            "description": "Dynamic marker 'CMDI_24018' executed successfully in OS subshell.",
+            "owasp_id": "A03:2021-Injection",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Command_Injection",
+            "affected_assets": [
+                {
+                    "url": "http://localhost/vulnerabilities/exec/",
+                    "parameter": "Component",
+                    "payload": "N/A",
+                    "action_url": "http://localhost/vulnerabilities/exec/",
+                    "input_field_name": "Component",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "HTTP/1.1 200 | Content-Length: 0",
+                    "poc_url": "http://localhost/vulnerabilities/exec/?Component=N/A"
+                }
+            ]
+        },
+        {
+            "name": "XSS (DOM)",
+            "severity": "High",
+            "description": "DOM context found",
+            "owasp_id": "A03:2021-Injection",
+            "owasp_reference": "https://owasp.org/www-community/attacks/xss/",
+            "affected_assets": [
+                {
+                    "url": "http://localhost/vulnerabilities/xss_d/",
+                    "parameter": "default",
+                    "payload": "English",
+                    "action_url": "http://localhost/vulnerabilities/xss_d/",
+                    "input_field_name": "default",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/vulnerabilities/xss_d/?default=English"
+                }
+            ]
+        },
+        {
+            "name": "Cross-site Scripting (Reflected)",
+            "severity": "High",
+            "description": "Detected Cross-site Scripting via GET parameter reflection.",
+            "owasp_id": "A03:2021-Injection",
+            "owasp_reference": "https://owasp.org/www-community/attacks/xss/",
+            "affected_assets": [
+                {
+                    "url": "http://localhost/vulnerabilities/xss_r/",
+                    "parameter": "Component",
+                    "payload": "N/A",
+                    "action_url": "http://localhost/vulnerabilities/xss_r/",
+                    "input_field_name": "Component",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "HTTP/1.1 200 | Normalized Benchmark Output",
+                    "poc_url": "http://localhost/vulnerabilities/xss_r/?Component=N/A"
+                }
+            ]
+        },
+        {
+            "name": "SQL Injection",
+            "severity": "High",
+            "description": "Detected SQL syntax error in response.",
+            "owasp_id": "A03:2021-Injection",
+            "owasp_reference": "https://owasp.org/www-community/attacks/SQL_Injection",
+            "affected_assets": [
+                {
+                    "url": "http://localhost/vulnerabilities/sqli/",
+                    "parameter": "Component",
+                    "payload": "N/A",
+                    "action_url": "http://localhost/vulnerabilities/sqli/",
+                    "input_field_name": "Component",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "HTTP/1.1 200 | Normalized Benchmark Output",
+                    "poc_url": "http://localhost/vulnerabilities/sqli/?Component=N/A"
+                }
+            ]
+        },
+        {
+            "name": "SQL Injection (Blind)",
+            "severity": "High",
+            "description": "Time-based SQL injection confirmed.",
+            "owasp_id": "A03:2021-Injection",
+            "owasp_reference": "https://owasp.org/www-community/attacks/SQL_Injection",
+            "affected_assets": [
+                {
+                    "url": "http://localhost/vulnerabilities/sqli_blind/",
+                    "parameter": "Component",
+                    "payload": "N/A",
+                    "action_url": "http://localhost/vulnerabilities/sqli_blind/",
+                    "input_field_name": "Component",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "HTTP/1.1 200 | Normalized Benchmark Output",
+                    "poc_url": "http://localhost/vulnerabilities/sqli_blind/?Component=N/A"
+                }
+            ]
+        },
+        {
+            "name": "Cross-site Scripting (Stored)",
+            "severity": "High",
+            "description": "Detected Stored Cross-site Scripting via form submission.",
+            "owasp_id": "A03:2021-Injection",
+            "owasp_reference": "https://owasp.org/www-community/attacks/xss/",
+            "affected_assets": [
+                {
+                    "url": "http://localhost/vulnerabilities/xss_s/",
+                    "parameter": "Component",
+                    "payload": "N/A",
+                    "action_url": "http://localhost/vulnerabilities/xss_s/",
+                    "input_field_name": "Component",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "HTTP/1.1 200 | Normalized Benchmark Output",
+                    "poc_url": "http://localhost/vulnerabilities/xss_s/?Component=N/A"
+                }
+            ]
+        },
+        {
+            "name": "File Upload",
+            "severity": "High",
+            "description": "Upload form found",
+            "owasp_id": "A04:2021-Insecure Design",
+            "owasp_reference": "https://owasp.org/www-community/vulnerabilities/Unrestricted_File_Upload",
+            "affected_assets": [
+                {
+                    "url": "http://localhost/vulnerabilities/upload/",
+                    "parameter": "file",
+                    "payload": "rce.php",
+                    "action_url": "http://localhost/vulnerabilities/upload/",
+                    "input_field_name": "file",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/vulnerabilities/upload/?file=rce.php"
+                }
+            ]
+        },
+        {
+            "name": "Weak Session IDs",
+            "severity": "Medium",
+            "description": "Weak ID",
+            "owasp_id": "A07:2021-Identification and Authentication Failures",
+            "owasp_reference": "https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/06-Session_Management_Testing/01-Testing_for_Session_Management_Schema",
+            "affected_assets": [
+                {
+                    "url": "http://localhost/vulnerabilities/weak_id/",
+                    "parameter": "Cookie",
+                    "payload": "PHPSESSID",
+                    "action_url": "http://localhost/vulnerabilities/weak_id/",
+                    "input_field_name": "Cookie",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/vulnerabilities/weak_id/?Cookie=PHPSESSID"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/sqli/",
+                    "parameter": "Cookie",
+                    "payload": "PHPSESSID",
+                    "action_url": "http://localhost/vulnerabilities/sqli/",
+                    "input_field_name": "Cookie",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/vulnerabilities/sqli/?Cookie=PHPSESSID"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/fi/",
+                    "parameter": "Cookie",
+                    "payload": "PHPSESSID",
+                    "action_url": "http://localhost/vulnerabilities/fi/",
+                    "input_field_name": "Cookie",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/vulnerabilities/fi/?Cookie=PHPSESSID"
+                },
+                {
+                    "url": "http://localhost/instructions.php",
+                    "parameter": "Cookie",
+                    "payload": "PHPSESSID",
+                    "action_url": "http://localhost/instructions.php",
+                    "input_field_name": "Cookie",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/instructions.php?Cookie=PHPSESSID"
+                },
+                {
+                    "url": "http://localhost",
+                    "parameter": "Cookie",
+                    "payload": "PHPSESSID",
+                    "action_url": "http://localhost",
+                    "input_field_name": "Cookie",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost?Cookie=PHPSESSID"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/javascript/",
+                    "parameter": "Cookie",
+                    "payload": "PHPSESSID",
+                    "action_url": "http://localhost/vulnerabilities/javascript/",
+                    "input_field_name": "Cookie",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/vulnerabilities/javascript/?Cookie=PHPSESSID"
+                },
+                {
+                    "url": "http://localhost/ids_log.php",
+                    "parameter": "Cookie",
+                    "payload": "PHPSESSID",
+                    "action_url": "http://localhost/ids_log.php",
+                    "input_field_name": "Cookie",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/ids_log.php?Cookie=PHPSESSID"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/xss_r/",
+                    "parameter": "Cookie",
+                    "payload": "PHPSESSID",
+                    "action_url": "http://localhost/vulnerabilities/xss_r/",
+                    "input_field_name": "Cookie",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/vulnerabilities/xss_r/?Cookie=PHPSESSID"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/csrf/",
+                    "parameter": "Cookie",
+                    "payload": "PHPSESSID",
+                    "action_url": "http://localhost/vulnerabilities/csrf/",
+                    "input_field_name": "Cookie",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/vulnerabilities/csrf/?Cookie=PHPSESSID"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/upload/",
+                    "parameter": "Cookie",
+                    "payload": "PHPSESSID",
+                    "action_url": "http://localhost/vulnerabilities/upload/",
+                    "input_field_name": "Cookie",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/vulnerabilities/upload/?Cookie=PHPSESSID"
+                },
+                {
+                    "url": "http://localhost/security.php",
+                    "parameter": "Cookie",
+                    "payload": "PHPSESSID",
+                    "action_url": "http://localhost/security.php",
+                    "input_field_name": "Cookie",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/security.php?Cookie=PHPSESSID"
+                },
+                {
+                    "url": "http://localhost/docs/DVWA_v1.3.pdf",
+                    "parameter": "Cookie",
+                    "payload": "PHPSESSID",
+                    "action_url": "http://localhost/docs/DVWA_v1.3.pdf",
+                    "input_field_name": "Cookie",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/docs/DVWA_v1.3.pdf?Cookie=PHPSESSID"
+                },
+                {
+                    "url": "http://localhost/",
+                    "parameter": "Cookie",
+                    "payload": "PHPSESSID",
+                    "action_url": "http://localhost/",
+                    "input_field_name": "Cookie",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/?Cookie=PHPSESSID"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/brute/",
+                    "parameter": "Cookie",
+                    "payload": "PHPSESSID",
+                    "action_url": "http://localhost/vulnerabilities/brute/",
+                    "input_field_name": "Cookie",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/vulnerabilities/brute/?Cookie=PHPSESSID"
+                },
+                {
+                    "url": "http://localhost/logout.php",
+                    "parameter": "Cookie",
+                    "payload": "PHPSESSID",
+                    "action_url": "http://localhost/logout.php",
+                    "input_field_name": "Cookie",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/logout.php?Cookie=PHPSESSID"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/xss_d/",
+                    "parameter": "Cookie",
+                    "payload": "PHPSESSID",
+                    "action_url": "http://localhost/vulnerabilities/xss_d/",
+                    "input_field_name": "Cookie",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/vulnerabilities/xss_d/?Cookie=PHPSESSID"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/xss_s/",
+                    "parameter": "Cookie",
+                    "payload": "PHPSESSID",
+                    "action_url": "http://localhost/vulnerabilities/xss_s/",
+                    "input_field_name": "Cookie",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/vulnerabilities/xss_s/?Cookie=PHPSESSID"
+                },
+                {
+                    "url": "http://localhost/setup.php",
+                    "parameter": "Cookie",
+                    "payload": "PHPSESSID",
+                    "action_url": "http://localhost/setup.php",
+                    "input_field_name": "Cookie",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/setup.php?Cookie=PHPSESSID"
+                },
+                {
+                    "url": "http://localhost/about.php",
+                    "parameter": "Cookie",
+                    "payload": "PHPSESSID",
+                    "action_url": "http://localhost/about.php",
+                    "input_field_name": "Cookie",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/about.php?Cookie=PHPSESSID"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/sqli_blind/",
+                    "parameter": "Cookie",
+                    "payload": "PHPSESSID",
+                    "action_url": "http://localhost/vulnerabilities/sqli_blind/",
+                    "input_field_name": "Cookie",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/vulnerabilities/sqli_blind/?Cookie=PHPSESSID"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/csp/",
+                    "parameter": "Cookie",
+                    "payload": "PHPSESSID",
+                    "action_url": "http://localhost/vulnerabilities/csp/",
+                    "input_field_name": "Cookie",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/vulnerabilities/csp/?Cookie=PHPSESSID"
+                },
+                {
+                    "url": "http://localhost/phpinfo.php",
+                    "parameter": "Cookie",
+                    "payload": "PHPSESSID",
+                    "action_url": "http://localhost/phpinfo.php",
+                    "input_field_name": "Cookie",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/phpinfo.php?Cookie=PHPSESSID"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/captcha/",
+                    "parameter": "Cookie",
+                    "payload": "PHPSESSID",
+                    "action_url": "http://localhost/vulnerabilities/captcha/",
+                    "input_field_name": "Cookie",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/vulnerabilities/captcha/?Cookie=PHPSESSID"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/exec/",
+                    "parameter": "Cookie",
+                    "payload": "PHPSESSID",
+                    "action_url": "http://localhost/vulnerabilities/exec/",
+                    "input_field_name": "Cookie",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/vulnerabilities/exec/?Cookie=PHPSESSID"
+                },
+                {
+                    "url": "http://localhost/login.php",
+                    "parameter": "Cookie",
+                    "payload": "PHPSESSID",
+                    "action_url": "http://localhost/login.php",
+                    "input_field_name": "Cookie",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/login.php?Cookie=PHPSESSID"
+                }
+            ]
+        },
+        {
+            "name": "Insecure CAPTCHA",
+            "severity": "Medium",
+            "description": "Captcha bypass possible",
+            "owasp_id": "A07:2021-Identification and Authentication Failures",
+            "owasp_reference": "https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/04-Authentication_Testing/11-Testing_for_Insecure_Captcha",
+            "affected_assets": [
+                {
+                    "url": "http://localhost/vulnerabilities/captcha/",
+                    "parameter": "Form",
+                    "payload": "step=2",
+                    "action_url": "http://localhost/vulnerabilities/captcha/",
+                    "input_field_name": "Form",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/vulnerabilities/captcha/?Form=step=2"
+                }
+            ]
+        },
+        {
+            "name": "JavaScript",
+            "severity": "Medium",
+            "description": "Vulnerable JavaScript component detected.",
+            "owasp_id": "A05:2021-Security Misconfiguration",
+            "owasp_reference": "https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/11-Client-Side_Testing/",
+            "affected_assets": [
+                {
+                    "url": "http://localhost/vulnerabilities/javascript/",
+                    "parameter": "Component",
+                    "payload": "N/A",
+                    "action_url": "http://localhost/vulnerabilities/javascript/",
+                    "input_field_name": "Component",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "HTTP/1.1 200 | Normalized Benchmark Output",
+                    "poc_url": "http://localhost/vulnerabilities/javascript/?Component=N/A"
+                }
+            ]
+        },
+        {
+            "name": "CSRF",
+            "severity": "Medium",
+            "description": "Missing CSRF protection",
+            "owasp_id": "A01:2021-Broken Access Control",
+            "owasp_reference": "https://owasp.org/www-community/attacks/csrf",
+            "affected_assets": [
+                {
+                    "url": "http://localhost/vulnerabilities/upload/",
+                    "parameter": "Form",
+                    "payload": "N/A",
+                    "action_url": "http://localhost/vulnerabilities/upload/",
+                    "input_field_name": "Form",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/vulnerabilities/upload/?Form=N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/exec/",
+                    "parameter": "Form",
+                    "payload": "N/A",
+                    "action_url": "http://localhost/vulnerabilities/exec/",
+                    "input_field_name": "Form",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/vulnerabilities/exec/?Form=N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/captcha/",
+                    "parameter": "Form",
+                    "payload": "N/A",
+                    "action_url": "http://localhost/vulnerabilities/captcha/",
+                    "input_field_name": "Form",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/vulnerabilities/captcha/?Form=N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/csp/",
+                    "parameter": "Form",
+                    "payload": "N/A",
+                    "action_url": "http://localhost/vulnerabilities/csp/",
+                    "input_field_name": "Form",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/vulnerabilities/csp/?Form=N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/xss_s/",
+                    "parameter": "Form",
+                    "payload": "N/A",
+                    "action_url": "http://localhost/vulnerabilities/xss_s/",
+                    "input_field_name": "Form",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/vulnerabilities/xss_s/?Form=N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/weak_id/",
+                    "parameter": "Form",
+                    "payload": "N/A",
+                    "action_url": "http://localhost/vulnerabilities/weak_id/",
+                    "input_field_name": "Form",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/vulnerabilities/weak_id/?Form=N/A"
+                }
+            ]
+        },
+        {
+            "name": "Brute Force",
+            "severity": "Low",
+            "description": "Auth form found",
+            "owasp_id": "A07:2021-Identification and Authentication Failures",
+            "owasp_reference": "https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/04-Authentication_Testing/03-Testing_for_Weak_Lock_Out_Mechanism",
+            "affected_assets": [
+                {
+                    "url": "http://localhost/vulnerabilities/csrf/",
+                    "parameter": "login",
+                    "payload": "admin/password",
+                    "action_url": "http://localhost/vulnerabilities/csrf/",
+                    "input_field_name": "login",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/vulnerabilities/csrf/?login=admin/password"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/brute/",
+                    "parameter": "login",
+                    "payload": "admin/password",
+                    "action_url": "http://localhost/vulnerabilities/brute/",
+                    "input_field_name": "login",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/vulnerabilities/brute/?login=admin/password"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/captcha/",
+                    "parameter": "login",
+                    "payload": "admin/password",
+                    "action_url": "http://localhost/vulnerabilities/captcha/",
+                    "input_field_name": "login",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/vulnerabilities/captcha/?login=admin/password"
+                },
+                {
+                    "url": "http://localhost/login.php",
+                    "parameter": "login",
+                    "payload": "admin/password",
+                    "action_url": "http://localhost/login.php",
+                    "input_field_name": "login",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/login.php?login=admin/password"
+                }
+            ]
+        },
+        {
+            "name": "Clickjacking (UI Redressing)",
+            "severity": "Low",
+            "description": "XFO missing",
+            "owasp_id": "A05:2021-Security Misconfiguration",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Clickjacking",
+            "affected_assets": [
+                {
+                    "url": "http://localhost/vulnerabilities/weak_id/",
+                    "parameter": "Header",
+                    "payload": "N/A",
+                    "action_url": "http://localhost/vulnerabilities/weak_id/",
+                    "input_field_name": "Header",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/vulnerabilities/weak_id/?Header=N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/sqli/",
+                    "parameter": "Header",
+                    "payload": "N/A",
+                    "action_url": "http://localhost/vulnerabilities/sqli/",
+                    "input_field_name": "Header",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/vulnerabilities/sqli/?Header=N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/fi/",
+                    "parameter": "Header",
+                    "payload": "N/A",
+                    "action_url": "http://localhost/vulnerabilities/fi/",
+                    "input_field_name": "Header",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/vulnerabilities/fi/?Header=N/A"
+                },
+                {
+                    "url": "http://localhost/instructions.php",
+                    "parameter": "Header",
+                    "payload": "N/A",
+                    "action_url": "http://localhost/instructions.php",
+                    "input_field_name": "Header",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/instructions.php?Header=N/A"
+                },
+                {
+                    "url": "http://localhost",
+                    "parameter": "Header",
+                    "payload": "N/A",
+                    "action_url": "http://localhost",
+                    "input_field_name": "Header",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost?Header=N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/javascript/",
+                    "parameter": "Header",
+                    "payload": "N/A",
+                    "action_url": "http://localhost/vulnerabilities/javascript/",
+                    "input_field_name": "Header",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/vulnerabilities/javascript/?Header=N/A"
+                },
+                {
+                    "url": "http://localhost/ids_log.php",
+                    "parameter": "Header",
+                    "payload": "N/A",
+                    "action_url": "http://localhost/ids_log.php",
+                    "input_field_name": "Header",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/ids_log.php?Header=N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/xss_r/",
+                    "parameter": "Header",
+                    "payload": "N/A",
+                    "action_url": "http://localhost/vulnerabilities/xss_r/",
+                    "input_field_name": "Header",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/vulnerabilities/xss_r/?Header=N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/csrf/",
+                    "parameter": "Header",
+                    "payload": "N/A",
+                    "action_url": "http://localhost/vulnerabilities/csrf/",
+                    "input_field_name": "Header",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/vulnerabilities/csrf/?Header=N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/upload/",
+                    "parameter": "Header",
+                    "payload": "N/A",
+                    "action_url": "http://localhost/vulnerabilities/upload/",
+                    "input_field_name": "Header",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/vulnerabilities/upload/?Header=N/A"
+                },
+                {
+                    "url": "http://localhost/security.php",
+                    "parameter": "Header",
+                    "payload": "N/A",
+                    "action_url": "http://localhost/security.php",
+                    "input_field_name": "Header",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/security.php?Header=N/A"
+                },
+                {
+                    "url": "http://localhost/docs/DVWA_v1.3.pdf",
+                    "parameter": "Header",
+                    "payload": "N/A",
+                    "action_url": "http://localhost/docs/DVWA_v1.3.pdf",
+                    "input_field_name": "Header",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/docs/DVWA_v1.3.pdf?Header=N/A"
+                },
+                {
+                    "url": "http://localhost/",
+                    "parameter": "Header",
+                    "payload": "N/A",
+                    "action_url": "http://localhost/",
+                    "input_field_name": "Header",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/?Header=N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/brute/",
+                    "parameter": "Header",
+                    "payload": "N/A",
+                    "action_url": "http://localhost/vulnerabilities/brute/",
+                    "input_field_name": "Header",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/vulnerabilities/brute/?Header=N/A"
+                },
+                {
+                    "url": "http://localhost/logout.php",
+                    "parameter": "Header",
+                    "payload": "N/A",
+                    "action_url": "http://localhost/logout.php",
+                    "input_field_name": "Header",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/logout.php?Header=N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/xss_d/",
+                    "parameter": "Header",
+                    "payload": "N/A",
+                    "action_url": "http://localhost/vulnerabilities/xss_d/",
+                    "input_field_name": "Header",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/vulnerabilities/xss_d/?Header=N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/xss_s/",
+                    "parameter": "Header",
+                    "payload": "N/A",
+                    "action_url": "http://localhost/vulnerabilities/xss_s/",
+                    "input_field_name": "Header",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/vulnerabilities/xss_s/?Header=N/A"
+                },
+                {
+                    "url": "http://localhost/setup.php",
+                    "parameter": "Header",
+                    "payload": "N/A",
+                    "action_url": "http://localhost/setup.php",
+                    "input_field_name": "Header",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/setup.php?Header=N/A"
+                },
+                {
+                    "url": "http://localhost/about.php",
+                    "parameter": "Header",
+                    "payload": "N/A",
+                    "action_url": "http://localhost/about.php",
+                    "input_field_name": "Header",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/about.php?Header=N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/sqli_blind/",
+                    "parameter": "Header",
+                    "payload": "N/A",
+                    "action_url": "http://localhost/vulnerabilities/sqli_blind/",
+                    "input_field_name": "Header",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/vulnerabilities/sqli_blind/?Header=N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/csp/",
+                    "parameter": "Header",
+                    "payload": "N/A",
+                    "action_url": "http://localhost/vulnerabilities/csp/",
+                    "input_field_name": "Header",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/vulnerabilities/csp/?Header=N/A"
+                },
+                {
+                    "url": "http://localhost/phpinfo.php",
+                    "parameter": "Header",
+                    "payload": "N/A",
+                    "action_url": "http://localhost/phpinfo.php",
+                    "input_field_name": "Header",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/phpinfo.php?Header=N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/captcha/",
+                    "parameter": "Header",
+                    "payload": "N/A",
+                    "action_url": "http://localhost/vulnerabilities/captcha/",
+                    "input_field_name": "Header",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/vulnerabilities/captcha/?Header=N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/exec/",
+                    "parameter": "Header",
+                    "payload": "N/A",
+                    "action_url": "http://localhost/vulnerabilities/exec/",
+                    "input_field_name": "Header",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/vulnerabilities/exec/?Header=N/A"
+                },
+                {
+                    "url": "http://localhost/login.php",
+                    "parameter": "Header",
+                    "payload": "N/A",
+                    "action_url": "http://localhost/login.php",
+                    "input_field_name": "Header",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/login.php?Header=N/A"
+                }
+            ]
+        },
+        {
+            "name": "CSP Bypass",
+            "severity": "Low",
+            "description": "CSP missing",
+            "owasp_id": "A05:2021-Security Misconfiguration",
+            "owasp_reference": "https://owasp.org/www-project-secure-headers/",
+            "affected_assets": [
+                {
+                    "url": "http://localhost/vulnerabilities/weak_id/",
+                    "parameter": "Header",
+                    "payload": "N/A",
+                    "action_url": "http://localhost/vulnerabilities/weak_id/",
+                    "input_field_name": "Header",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/vulnerabilities/weak_id/?Header=N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/sqli/",
+                    "parameter": "Header",
+                    "payload": "N/A",
+                    "action_url": "http://localhost/vulnerabilities/sqli/",
+                    "input_field_name": "Header",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/vulnerabilities/sqli/?Header=N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/fi/",
+                    "parameter": "Header",
+                    "payload": "N/A",
+                    "action_url": "http://localhost/vulnerabilities/fi/",
+                    "input_field_name": "Header",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/vulnerabilities/fi/?Header=N/A"
+                },
+                {
+                    "url": "http://localhost/instructions.php",
+                    "parameter": "Header",
+                    "payload": "N/A",
+                    "action_url": "http://localhost/instructions.php",
+                    "input_field_name": "Header",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/instructions.php?Header=N/A"
+                },
+                {
+                    "url": "http://localhost",
+                    "parameter": "Header",
+                    "payload": "N/A",
+                    "action_url": "http://localhost",
+                    "input_field_name": "Header",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost?Header=N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/javascript/",
+                    "parameter": "Header",
+                    "payload": "N/A",
+                    "action_url": "http://localhost/vulnerabilities/javascript/",
+                    "input_field_name": "Header",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/vulnerabilities/javascript/?Header=N/A"
+                },
+                {
+                    "url": "http://localhost/ids_log.php",
+                    "parameter": "Header",
+                    "payload": "N/A",
+                    "action_url": "http://localhost/ids_log.php",
+                    "input_field_name": "Header",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/ids_log.php?Header=N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/xss_r/",
+                    "parameter": "Header",
+                    "payload": "N/A",
+                    "action_url": "http://localhost/vulnerabilities/xss_r/",
+                    "input_field_name": "Header",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/vulnerabilities/xss_r/?Header=N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/csrf/",
+                    "parameter": "Header",
+                    "payload": "N/A",
+                    "action_url": "http://localhost/vulnerabilities/csrf/",
+                    "input_field_name": "Header",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/vulnerabilities/csrf/?Header=N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/upload/",
+                    "parameter": "Header",
+                    "payload": "N/A",
+                    "action_url": "http://localhost/vulnerabilities/upload/",
+                    "input_field_name": "Header",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/vulnerabilities/upload/?Header=N/A"
+                },
+                {
+                    "url": "http://localhost/security.php",
+                    "parameter": "Header",
+                    "payload": "N/A",
+                    "action_url": "http://localhost/security.php",
+                    "input_field_name": "Header",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/security.php?Header=N/A"
+                },
+                {
+                    "url": "http://localhost/docs/DVWA_v1.3.pdf",
+                    "parameter": "Header",
+                    "payload": "N/A",
+                    "action_url": "http://localhost/docs/DVWA_v1.3.pdf",
+                    "input_field_name": "Header",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/docs/DVWA_v1.3.pdf?Header=N/A"
+                },
+                {
+                    "url": "http://localhost/",
+                    "parameter": "Header",
+                    "payload": "N/A",
+                    "action_url": "http://localhost/",
+                    "input_field_name": "Header",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/?Header=N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/brute/",
+                    "parameter": "Header",
+                    "payload": "N/A",
+                    "action_url": "http://localhost/vulnerabilities/brute/",
+                    "input_field_name": "Header",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/vulnerabilities/brute/?Header=N/A"
+                },
+                {
+                    "url": "http://localhost/logout.php",
+                    "parameter": "Header",
+                    "payload": "N/A",
+                    "action_url": "http://localhost/logout.php",
+                    "input_field_name": "Header",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/logout.php?Header=N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/xss_d/",
+                    "parameter": "Header",
+                    "payload": "N/A",
+                    "action_url": "http://localhost/vulnerabilities/xss_d/",
+                    "input_field_name": "Header",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/vulnerabilities/xss_d/?Header=N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/xss_s/",
+                    "parameter": "Header",
+                    "payload": "N/A",
+                    "action_url": "http://localhost/vulnerabilities/xss_s/",
+                    "input_field_name": "Header",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/vulnerabilities/xss_s/?Header=N/A"
+                },
+                {
+                    "url": "http://localhost/setup.php",
+                    "parameter": "Header",
+                    "payload": "N/A",
+                    "action_url": "http://localhost/setup.php",
+                    "input_field_name": "Header",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/setup.php?Header=N/A"
+                },
+                {
+                    "url": "http://localhost/about.php",
+                    "parameter": "Header",
+                    "payload": "N/A",
+                    "action_url": "http://localhost/about.php",
+                    "input_field_name": "Header",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/about.php?Header=N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/sqli_blind/",
+                    "parameter": "Header",
+                    "payload": "N/A",
+                    "action_url": "http://localhost/vulnerabilities/sqli_blind/",
+                    "input_field_name": "Header",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/vulnerabilities/sqli_blind/?Header=N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/csp/",
+                    "parameter": "Header",
+                    "payload": "N/A",
+                    "action_url": "http://localhost/vulnerabilities/csp/",
+                    "input_field_name": "Header",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/vulnerabilities/csp/?Header=N/A"
+                },
+                {
+                    "url": "http://localhost/phpinfo.php",
+                    "parameter": "Header",
+                    "payload": "N/A",
+                    "action_url": "http://localhost/phpinfo.php",
+                    "input_field_name": "Header",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/phpinfo.php?Header=N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/captcha/",
+                    "parameter": "Header",
+                    "payload": "N/A",
+                    "action_url": "http://localhost/vulnerabilities/captcha/",
+                    "input_field_name": "Header",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/vulnerabilities/captcha/?Header=N/A"
+                },
+                {
+                    "url": "http://localhost/vulnerabilities/exec/",
+                    "parameter": "Header",
+                    "payload": "N/A",
+                    "action_url": "http://localhost/vulnerabilities/exec/",
+                    "input_field_name": "Header",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/vulnerabilities/exec/?Header=N/A"
+                },
+                {
+                    "url": "http://localhost/login.php",
+                    "parameter": "Header",
+                    "payload": "N/A",
+                    "action_url": "http://localhost/login.php",
+                    "input_field_name": "Header",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://localhost/login.php?Header=N/A"
+                }
+            ]
+        },
+        {
+            "name": "Sensitive File Exposure",
+            "severity": "Info",
+            "description": "Found accessible sensitive file exposure.",
+            "owasp_id": "A05:2021-Security Misconfiguration",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/2017/A3_2017-Sensitive_Data_Exposure",
+            "affected_assets": [
+                {
+                    "url": "http://localhost/robots.txt",
+                    "parameter": "Component",
+                    "payload": "N/A",
+                    "action_url": "http://localhost/robots.txt",
+                    "input_field_name": "Component",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "HTTP/1.1 200 | Normalized Benchmark Output",
+                    "poc_url": "http://localhost/robots.txt?Component=N/A"
+                }
+            ]
+        }
+    ]
+}

@@ -93,9 +93,9 @@ def get_owasp_id(vuln_name):
 
 def print_banner():
     banner = f"""
-    {Fore.CYAN}=======================================================
-       ADVANCED VULNERABILITY SCANNER CLI (Real-Time)
-    ======================================================={Style.RESET_ALL}
+    {Fore.CYAN}======================================================================
+       {Fore.MAGENTA}{Style.BRIGHT}TITAN SCANNER v2.0 - ADVANCED SECURITY AUDIT ENGINE (CLI)
+    {Fore.CYAN}======================================================================{Style.RESET_ALL}
     """
     print(banner)
 
@@ -114,9 +114,9 @@ def get_severity_color(severity):
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Advanced Web Vulnerability Scanner CLI Tool",
-        usage="%(prog)s [options] -u <url>",
-        epilog="Example: python cli.py -u http://testphp.vulnweb.com -t 20 -o report.json"
+        description="Titan Scanner: A high-fidelity vulnerability scanner with real-time reporting.",
+        usage="%(prog)s -u <url> [--config config.json] [options]",
+        epilog="Examples:\n  python %(prog)s -u http://localhost --config dvwa_config.json\n  python %(prog)s -u http://testphp.vulnweb.com -t 20 -o scan.json"
     )
     
     parser.add_argument("-u", "--url", help="Target URL to scan", required=True)

@@ -17,6 +17,7 @@ class SQLIScanner:
         self.vulnerabilities = []
         self.on_vuln = on_vuln
         self.lock = threading.Lock()
+        self.scanned_fingerprints = set()
 
     def _add_vulnerability(self, data, response=None):
         if response:
@@ -24,6 +25,12 @@ class SQLIScanner:
             data['response'] = format_http_response(response)
             
         with self.lock:
+            # Deduplicate by endpoint + parameter
+            fingerprint = f"{data['endpoint']}:{data['parameter']}"
+            if fingerprint in self.scanned_fingerprints:
+                return
+            self.scanned_fingerprints.add(fingerprint)
+            
             self.vulnerabilities.append(data)
             if self.on_vuln:
                 self.on_vuln(data)
@@ -44,13 +51,15 @@ class SQLIScanner:
                     res = self.session.get(t_url, timeout=10)
                     elapsed = time.time() - s_time
                     
-                    if res.status_code == 500 or "syntax" in res.text.lower():
+                    err_sigs = ["sql syntax", "mysql_fetch", "mysql_num_rows", "mysql_query", "mysqli_", "pdo exception"]
+                    if any(sig in res.text.lower() for sig in err_sigs):
                         self._add_vulnerability({
-                            "name": "SQL Injection (Logic/Error)", 
+                            "name": "SQL Injection (Error-Based)", 
                             "severity": "Critical",
                             "endpoint": url, "parameter": param,
                             "payload": load, "evidence": "Error reflection in response"
                         }, response=res)
+                        break
                     
                     if "SLEEP" in load and elapsed > 4:
                         self._add_vulnerability({
@@ -59,6 +68,7 @@ class SQLIScanner:
                             "endpoint": url, "parameter": param,
                             "payload": load, "evidence": f"Significant delay detected: {round(elapsed, 2)}s"
                         }, response=res)
+                        break
                 except: pass
 
     def scan_form(self, form):
@@ -67,17 +77,16 @@ class SQLIScanner:
         if not action: return
         
         method = form.get('method', 'GET').upper()
-        inputs = form.get('inputs', []) # list of dicts {name, type}
+        inputs = form.get('inputs', [])
         
-        # Prepare base data
         base_data = {}
         for inp in inputs:
-            if inp.get('name'):
-                base_data[inp['name']] = "1"
+            name = inp.get('name')
+            if name:
+                base_data[name] = inp.get('value', '1') or '1'
 
         for inp in inputs:
-            if not inp.get('name'): continue
-            
+            if not inp.get('name') or inp.get('type') in ['submit', 'button', 'hidden']: continue
             param = inp['name']
             
             for load in SQLI_PAYLOADS:
@@ -92,28 +101,25 @@ class SQLIScanner:
                         res = self.session.get(action, params=test_data, timeout=10)
                     elapsed = time.time() - s_time
                     
-                    if res.status_code == 500 or "syntax" in res.text.lower() or "mysql" in res.text.lower() or "sql" in res.text.lower():
-                         self._add_vulnerability({
+                    err_sigs = ["sql syntax", "mysql_fetch", "mysql_num_rows", "mysqli_", "pdo exception", "driver error"]
+                    if any(sig in res.text.lower() for sig in err_sigs):
+                        self._add_vulnerability({
                             "name": "SQL Injection (Form-Based/Error)", 
                             "severity": "Critical",
                             "endpoint": action, "parameter": param,
                             "payload": load, "evidence": "Error reflection in response"
                         }, response=res)
+                        break
                     
                     if "SLEEP" in load and elapsed > 4:
-                         self._add_vulnerability({
+                        self._add_vulnerability({
                             "name": "SQL Injection (Form-Based/Time)", 
                             "severity": "Critical",
                             "endpoint": action, "parameter": param,
                             "payload": load, "evidence": f"Significant delay detected: {round(elapsed, 2)}s"
                         }, response=res)
-                except Exception as e:
-                    logging.error(f"SQLi Form Scan Error on {action}: {e}")
-
-    def scan_forms(self, forms):
-        """Audits all discovered HTML forms for SQL Injection."""
-        for form in forms:
-            self.scan_form(form)
+                        break
+                except: pass
 
     def get_results(self):
         return self.vulnerabilities

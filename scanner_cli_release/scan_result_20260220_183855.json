@@ -1,0 +1,4 @@
+{
+    "error": "Authentication Aborted",
+    "details": "There are multiple cookies with name, 'PHPSESSID'"
+}

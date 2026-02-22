@@ -1,0 +1,203 @@
+{
+    "scan_metadata": {
+        "target": "http://localhost",
+        "scan_time": "2026-02-22T15:44:00.160806",
+        "duration_seconds": 3.62,
+        "threads_used": 10,
+        "authenticated": true
+    },
+    "chart_values": {
+        "labels": [
+            "Critical",
+            "High",
+            "Medium",
+            "Low",
+            "Info"
+        ],
+        "data": [
+            0,
+            2,
+            3,
+            3,
+            1
+        ]
+    },
+    "identified_chart_values": {
+        "labels": [
+            "Critical",
+            "High",
+            "Medium",
+            "Low",
+            "Info"
+        ],
+        "data": [
+            0,
+            2,
+            3,
+            3,
+            1
+        ]
+    },
+    "severity_summary": {
+        "Critical": 0,
+        "High": 2,
+        "Medium": 3,
+        "Low": 3,
+        "Info": 1
+    },
+    "identified_summary": {
+        "Critical": 0,
+        "High": 2,
+        "Medium": 3,
+        "Low": 3,
+        "Info": 1
+    },
+    "risk_score": 133,
+    "risk_grade": "D",
+    "vulnerabilities": [
+        {
+            "name": "XSS (DOM)",
+            "severity": "High",
+            "endpoint": "http://localhost/vulnerabilities/xss_d/",
+            "parameter": "default",
+            "payload": "English",
+            "evidence": "DOM context found",
+            "request": "",
+            "response": "",
+            "action_url": "http://localhost/vulnerabilities/xss_d/",
+            "input_field_name": "default",
+            "http_method": "GET",
+            "owasp_reference": "https://owasp.org/www-community/attacks/xss/",
+            "owasp_id": "A03:2021-Injection",
+            "poc_url": "http://localhost/vulnerabilities/xss_d/?default=English"
+        },
+        {
+            "name": "File Upload",
+            "severity": "High",
+            "endpoint": "http://localhost/vulnerabilities/upload/",
+            "parameter": "file",
+            "payload": "rce.php",
+            "evidence": "Upload form found",
+            "request": "",
+            "response": "",
+            "action_url": "http://localhost/vulnerabilities/upload/",
+            "input_field_name": "file",
+            "http_method": "GET",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A",
+            "poc_url": "http://localhost/vulnerabilities/upload/?file=rce.php"
+        },
+        {
+            "name": "Weak Session IDs",
+            "severity": "Medium",
+            "endpoint": "http://localhost/about.php",
+            "parameter": "Cookie",
+            "payload": "PHPSESSID",
+            "evidence": "Weak ID",
+            "request": "",
+            "response": "",
+            "action_url": "http://localhost/about.php",
+            "input_field_name": "Cookie",
+            "http_method": "GET",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A",
+            "poc_url": "http://localhost/about.php?Cookie=PHPSESSID"
+        },
+        {
+            "name": "Insecure CAPTCHA",
+            "severity": "Medium",
+            "endpoint": "http://localhost/vulnerabilities/captcha/",
+            "parameter": "Form",
+            "payload": "step=2",
+            "evidence": "Captcha bypass possible",
+            "request": "",
+            "response": "",
+            "action_url": "http://localhost/vulnerabilities/captcha/",
+            "input_field_name": "Form",
+            "http_method": "GET",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A",
+            "poc_url": "http://localhost/vulnerabilities/captcha/?Form=step=2"
+        },
+        {
+            "name": "CSRF",
+            "severity": "Medium",
+            "endpoint": "http://localhost/vulnerabilities/upload/",
+            "parameter": "Form",
+            "payload": "N/A",
+            "evidence": "Missing CSRF protection",
+            "request": "",
+            "response": "",
+            "action_url": "http://localhost/vulnerabilities/upload/",
+            "input_field_name": "Form",
+            "http_method": "GET",
+            "owasp_reference": "https://owasp.org/www-community/attacks/csrf",
+            "owasp_id": "A01:2021-Broken Access Control",
+            "poc_url": "http://localhost/vulnerabilities/upload/?Form=N/A"
+        },
+        {
+            "name": "Brute Force",
+            "severity": "Low",
+            "endpoint": "http://localhost/vulnerabilities/brute/",
+            "parameter": "login",
+            "payload": "admin/password",
+            "evidence": "Auth form found",
+            "request": "",
+            "response": "",
+            "action_url": "http://localhost/vulnerabilities/brute/",
+            "input_field_name": "login",
+            "http_method": "GET",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A",
+            "poc_url": "http://localhost/vulnerabilities/brute/?login=admin/password"
+        },
+        {
+            "name": "Clickjacking (UI Redressing)",
+            "severity": "Low",
+            "endpoint": "http://localhost/about.php",
+            "parameter": "Header",
+            "payload": "N/A",
+            "evidence": "XFO missing",
+            "request": "",
+            "response": "",
+            "action_url": "http://localhost/about.php",
+            "input_field_name": "Header",
+            "http_method": "GET",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Clickjacking",
+            "owasp_id": "A05:2021-Security Misconfiguration",
+            "poc_url": "http://localhost/about.php?Header=N/A"
+        },
+        {
+            "name": "CSP Bypass",
+            "severity": "Low",
+            "endpoint": "http://localhost/about.php",
+            "parameter": "Header",
+            "payload": "N/A",
+            "evidence": "CSP missing",
+            "request": "",
+            "response": "",
+            "action_url": "http://localhost/about.php",
+            "input_field_name": "Header",
+            "http_method": "GET",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A",
+            "poc_url": "http://localhost/about.php?Header=N/A"
+        },
+        {
+            "name": "PHP Info",
+            "severity": "Info",
+            "endpoint": "http://localhost/setup.php",
+            "parameter": "Page",
+            "payload": "N/A",
+            "evidence": "phpinfo() output",
+            "request": "",
+            "response": "",
+            "action_url": "http://localhost/setup.php",
+            "input_field_name": "Page",
+            "http_method": "GET",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/",
+            "owasp_id": "N/A",
+            "poc_url": "http://localhost/setup.php?Page=N/A"
+        }
+    ]
+}
