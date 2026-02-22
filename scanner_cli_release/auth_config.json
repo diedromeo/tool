@@ -1,0 +1,8 @@
+{
+    "login_url": "http://206.189.142.31/login.php",
+    "username": "admin",
+    "password": "password",
+    "username_field": "username",
+    "password_field": "password",
+    "security_level": "low"
+}

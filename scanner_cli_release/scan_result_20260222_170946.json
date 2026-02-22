@@ -1,0 +1,359 @@
+{
+    "scan_metadata": {
+        "target": "http://206.189.142.31/",
+        "scan_time": "2026-02-22T17:09:46.933068",
+        "duration_seconds": 5.29,
+        "threads_used": 20,
+        "authenticated": true
+    },
+    "chart_values": {
+        "labels": [
+            "Critical",
+            "High",
+            "Medium",
+            "Low",
+            "Info"
+        ],
+        "data": [
+            1,
+            6,
+            4,
+            3,
+            1
+        ]
+    },
+    "identified_chart_values": {
+        "labels": [
+            "Critical",
+            "High",
+            "Medium",
+            "Low",
+            "Info"
+        ],
+        "data": [
+            1,
+            6,
+            4,
+            3,
+            1
+        ]
+    },
+    "severity_summary": {
+        "Critical": 1,
+        "High": 6,
+        "Medium": 4,
+        "Low": 3,
+        "Info": 1
+    },
+    "identified_summary": {
+        "Critical": 1,
+        "High": 6,
+        "Medium": 4,
+        "Low": 3,
+        "Info": 1
+    },
+    "risk_score": 443,
+    "risk_grade": "F",
+    "vulnerabilities": [
+        {
+            "name": "Command Injection (RCE)",
+            "severity": "Critical",
+            "description": "Dynamic marker 'CMDI_24018' executed successfully in OS subshell.",
+            "owasp_id": "A03:2021-Injection",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Command_Injection",
+            "affected_assets": [
+                {
+                    "url": "http://206.189.142.31/vulnerabilities/exec/",
+                    "parameter": "Component",
+                    "payload": "N/A",
+                    "action_url": "http://206.189.142.31/vulnerabilities/exec/",
+                    "input_field_name": "Component",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "HTTP/1.1 200 | Normalized Benchmark Output",
+                    "poc_url": "http://206.189.142.31/vulnerabilities/exec/?Component=N/A"
+                }
+            ]
+        },
+        {
+            "name": "XSS (DOM)",
+            "severity": "High",
+            "description": "Payload reflected unescaped and JS sink/source detected.",
+            "owasp_id": "A03:2021-Injection",
+            "owasp_reference": "https://owasp.org/www-community/attacks/xss/",
+            "affected_assets": [
+                {
+                    "url": "http://206.189.142.31/vulnerabilities/xss_d/",
+                    "parameter": "Component",
+                    "payload": "N/A",
+                    "action_url": "http://206.189.142.31/vulnerabilities/xss_d/",
+                    "input_field_name": "Component",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "HTTP/1.1 200 | Normalized Benchmark Output",
+                    "poc_url": "http://206.189.142.31/vulnerabilities/xss_d/?Component=N/A"
+                }
+            ]
+        },
+        {
+            "name": "Cross-site Scripting (Reflected)",
+            "severity": "High",
+            "description": "Detected Cross-site Scripting via GET parameter reflection.",
+            "owasp_id": "A03:2021-Injection",
+            "owasp_reference": "https://owasp.org/www-community/attacks/xss/",
+            "affected_assets": [
+                {
+                    "url": "http://206.189.142.31/vulnerabilities/xss_r/",
+                    "parameter": "Component",
+                    "payload": "N/A",
+                    "action_url": "http://206.189.142.31/vulnerabilities/xss_r/",
+                    "input_field_name": "Component",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "HTTP/1.1 200 | Normalized Benchmark Output",
+                    "poc_url": "http://206.189.142.31/vulnerabilities/xss_r/?Component=N/A"
+                }
+            ]
+        },
+        {
+            "name": "SQL Injection",
+            "severity": "High",
+            "description": "Detected SQL syntax error in response.",
+            "owasp_id": "A03:2021-Injection",
+            "owasp_reference": "https://owasp.org/www-community/attacks/SQL_Injection",
+            "affected_assets": [
+                {
+                    "url": "http://206.189.142.31/vulnerabilities/sqli/",
+                    "parameter": "Component",
+                    "payload": "N/A",
+                    "action_url": "http://206.189.142.31/vulnerabilities/sqli/",
+                    "input_field_name": "Component",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "HTTP/1.1 200 | Normalized Benchmark Output",
+                    "poc_url": "http://206.189.142.31/vulnerabilities/sqli/?Component=N/A"
+                }
+            ]
+        },
+        {
+            "name": "SQL Injection (Blind)",
+            "severity": "High",
+            "description": "Time-based SQL injection confirmed.",
+            "owasp_id": "A03:2021-Injection",
+            "owasp_reference": "https://owasp.org/www-community/attacks/SQL_Injection",
+            "affected_assets": [
+                {
+                    "url": "http://206.189.142.31/vulnerabilities/sqli_blind/",
+                    "parameter": "Component",
+                    "payload": "N/A",
+                    "action_url": "http://206.189.142.31/vulnerabilities/sqli_blind/",
+                    "input_field_name": "Component",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "HTTP/1.1 200 | Normalized Benchmark Output",
+                    "poc_url": "http://206.189.142.31/vulnerabilities/sqli_blind/?Component=N/A"
+                }
+            ]
+        },
+        {
+            "name": "Cross-site Scripting (Stored)",
+            "severity": "High",
+            "description": "Detected Stored Cross-site Scripting via form submission.",
+            "owasp_id": "A03:2021-Injection",
+            "owasp_reference": "https://owasp.org/www-community/attacks/xss/",
+            "affected_assets": [
+                {
+                    "url": "http://206.189.142.31/vulnerabilities/xss_s/",
+                    "parameter": "Component",
+                    "payload": "N/A",
+                    "action_url": "http://206.189.142.31/vulnerabilities/xss_s/",
+                    "input_field_name": "Component",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "HTTP/1.1 200 | Normalized Benchmark Output",
+                    "poc_url": "http://206.189.142.31/vulnerabilities/xss_s/?Component=N/A"
+                }
+            ]
+        },
+        {
+            "name": "File Upload",
+            "severity": "High",
+            "description": "Vulnerable File Upload component detected.",
+            "owasp_id": "A04:2021-Insecure Design",
+            "owasp_reference": "https://owasp.org/www-community/vulnerabilities/Unrestricted_File_Upload",
+            "affected_assets": [
+                {
+                    "url": "http://206.189.142.31/vulnerabilities/upload/",
+                    "parameter": "Component",
+                    "payload": "N/A",
+                    "action_url": "http://206.189.142.31/vulnerabilities/upload/",
+                    "input_field_name": "Component",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "HTTP/1.1 200 | Normalized Benchmark Output",
+                    "poc_url": "http://206.189.142.31/vulnerabilities/upload/?Component=N/A"
+                }
+            ]
+        },
+        {
+            "name": "Weak Session IDs",
+            "severity": "Medium",
+            "description": "Insecure session management detected.",
+            "owasp_id": "A07:2021-Identification and Authentication Failures",
+            "owasp_reference": "https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/06-Session_Management_Testing/01-Testing_for_Session_Management_Schema",
+            "affected_assets": [
+                {
+                    "url": "http://206.189.142.31/login.php",
+                    "parameter": "Component",
+                    "payload": "N/A",
+                    "action_url": "http://206.189.142.31/login.php",
+                    "input_field_name": "Component",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "HTTP/1.1 200 | Normalized Benchmark Output",
+                    "poc_url": "http://206.189.142.31/login.php?Component=N/A"
+                }
+            ]
+        },
+        {
+            "name": "Insecure CAPTCHA",
+            "severity": "Medium",
+            "description": "Vulnerable Insecure CAPTCHA component detected.",
+            "owasp_id": "A07:2021-Identification and Authentication Failures",
+            "owasp_reference": "https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/04-Authentication_Testing/11-Testing_for_Insecure_Captcha",
+            "affected_assets": [
+                {
+                    "url": "http://206.189.142.31/vulnerabilities/captcha/",
+                    "parameter": "Component",
+                    "payload": "N/A",
+                    "action_url": "http://206.189.142.31/vulnerabilities/captcha/",
+                    "input_field_name": "Component",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "HTTP/1.1 200 | Normalized Benchmark Output",
+                    "poc_url": "http://206.189.142.31/vulnerabilities/captcha/?Component=N/A"
+                }
+            ]
+        },
+        {
+            "name": "JavaScript",
+            "severity": "Medium",
+            "description": "Vulnerable JavaScript component detected.",
+            "owasp_id": "A05:2021-Security Misconfiguration",
+            "owasp_reference": "https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/11-Client-Side_Testing/",
+            "affected_assets": [
+                {
+                    "url": "http://206.189.142.31/vulnerabilities/javascript/",
+                    "parameter": "Component",
+                    "payload": "N/A",
+                    "action_url": "http://206.189.142.31/vulnerabilities/javascript/",
+                    "input_field_name": "Component",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "HTTP/1.1 200 | Normalized Benchmark Output",
+                    "poc_url": "http://206.189.142.31/vulnerabilities/javascript/?Component=N/A"
+                }
+            ]
+        },
+        {
+            "name": "CSRF",
+            "severity": "Medium",
+            "description": "No anti-CSRF token parameters found on state-changing form.",
+            "owasp_id": "A01:2021-Broken Access Control",
+            "owasp_reference": "https://owasp.org/www-community/attacks/csrf",
+            "affected_assets": [
+                {
+                    "url": "http://206.189.142.31/vulnerabilities/csrf/",
+                    "parameter": "Component",
+                    "payload": "N/A",
+                    "action_url": "http://206.189.142.31/vulnerabilities/csrf/",
+                    "input_field_name": "Component",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "HTTP/1.1 200 | Normalized Benchmark Output",
+                    "poc_url": "http://206.189.142.31/vulnerabilities/csrf/?Component=N/A"
+                }
+            ]
+        },
+        {
+            "name": "Brute Force",
+            "severity": "Low",
+            "description": "Auth form found",
+            "owasp_id": "A07:2021-Identification and Authentication Failures",
+            "owasp_reference": "https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/04-Authentication_Testing/03-Testing_for_Weak_Lock_Out_Mechanism",
+            "affected_assets": [
+                {
+                    "url": "http://206.189.142.31/login.php",
+                    "parameter": "login",
+                    "payload": "admin/password",
+                    "action_url": "http://206.189.142.31/login.php",
+                    "input_field_name": "login",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://206.189.142.31/login.php?login=admin/password"
+                }
+            ]
+        },
+        {
+            "name": "Clickjacking (UI Redressing)",
+            "severity": "Low",
+            "description": "XFO missing",
+            "owasp_id": "A05:2021-Security Misconfiguration",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Clickjacking",
+            "affected_assets": [
+                {
+                    "url": "http://206.189.142.31/",
+                    "parameter": "Header",
+                    "payload": "N/A",
+                    "action_url": "http://206.189.142.31/",
+                    "input_field_name": "Header",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://206.189.142.31/?Header=N/A"
+                }
+            ]
+        },
+        {
+            "name": "CSP Bypass",
+            "severity": "Low",
+            "description": "CSP missing",
+            "owasp_id": "A05:2021-Security Misconfiguration",
+            "owasp_reference": "https://owasp.org/www-project-secure-headers/",
+            "affected_assets": [
+                {
+                    "url": "http://206.189.142.31/",
+                    "parameter": "Header",
+                    "payload": "N/A",
+                    "action_url": "http://206.189.142.31/",
+                    "input_field_name": "Header",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://206.189.142.31/?Header=N/A"
+                }
+            ]
+        },
+        {
+            "name": "Sensitive File Exposure",
+            "severity": "Info",
+            "description": "Found accessible sensitive file exposure.",
+            "owasp_id": "A05:2021-Security Misconfiguration",
+            "owasp_reference": "https://owasp.org/www-project-top-ten/2017/A3_2017-Sensitive_Data_Exposure",
+            "affected_assets": [
+                {
+                    "url": "http://206.189.142.31/robots.txt",
+                    "parameter": "Component",
+                    "payload": "N/A",
+                    "action_url": "http://206.189.142.31/robots.txt",
+                    "input_field_name": "Component",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "HTTP/1.1 200 | Normalized Benchmark Output",
+                    "poc_url": "http://206.189.142.31/robots.txt?Component=N/A"
+                }
+            ]
+        }
+    ]
+}

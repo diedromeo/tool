@@ -1,0 +1,132 @@
+{
+    "scan_metadata": {
+        "target": "http://206.189.142.31/",
+        "scan_time": "2026-02-22T17:08:25.360588",
+        "duration_seconds": 5.64,
+        "threads_used": 20,
+        "authenticated": true
+    },
+    "chart_values": {
+        "labels": [
+            "Critical",
+            "High",
+            "Medium",
+            "Low",
+            "Info"
+        ],
+        "data": [
+            0,
+            1,
+            0,
+            3,
+            0
+        ]
+    },
+    "identified_chart_values": {
+        "labels": [
+            "Critical",
+            "High",
+            "Medium",
+            "Low",
+            "Info"
+        ],
+        "data": [
+            0,
+            1,
+            0,
+            3,
+            0
+        ]
+    },
+    "severity_summary": {
+        "Critical": 0,
+        "High": 1,
+        "Medium": 0,
+        "Low": 3,
+        "Info": 0
+    },
+    "identified_summary": {
+        "Critical": 0,
+        "High": 1,
+        "Medium": 0,
+        "Low": 3,
+        "Info": 0
+    },
+    "risk_score": 53,
+    "risk_grade": "D",
+    "vulnerabilities": [
+        {
+            "name": "SQL Injection",
+            "severity": "High",
+            "description": "PROBABLE: Probable SQLi via Database Error",
+            "owasp_id": "A03:2021-Injection",
+            "owasp_reference": "https://owasp.org/www-community/attacks/SQL_Injection",
+            "affected_assets": [
+                {
+                    "url": "http://206.189.142.31/login.php",
+                    "parameter": "Login",
+                    "payload": "\"",
+                    "action_url": "http://206.189.142.31/login.php",
+                    "input_field_name": "Login",
+                    "http_method": "GET",
+                    "request": "GET http://206.189.142.31/login.php\nUser-Agent: python-requests/2.32.5\nAccept-Encoding: gzip, deflate, zstd\nAccept: */*\nConnection: keep-alive\nCookie: PHPSESSID=ls90p1k5ba8utoh1lo0qi53hg7; security=low\n\n",
+                    "response": "HTTP/1.1 200 | Content-Length: 1573",
+                    "poc_url": "http://206.189.142.31/login.php?Login=\""
+                }
+            ]
+        },
+        {
+            "name": "Brute Force",
+            "severity": "Low",
+            "description": "Auth form found",
+            "owasp_id": "A07:2021-Identification and Authentication Failures",
+            "owasp_reference": "https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/04-Authentication_Testing/03-Testing_for_Weak_Lock_Out_Mechanism",
+            "affected_assets": [
+                {
+                    "url": "http://206.189.142.31/login.php",
+                    "parameter": "login",
+                    "action_url": "http://206.189.142.31/login.php",
+                    "input_field_name": "login",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://206.189.142.31/login.php?login=admin/password"
+                }
+            ]
+        },
+        {
+            "name": "Clickjacking (UI Redressing)",
+            "severity": "Low",
+            "description": "XFO missing",
+            "owasp_id": "A05:2021-Security Misconfiguration",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Clickjacking",
+            "affected_assets": [
+                {
+                    "url": "http://206.189.142.31/",
+                    "action_url": "http://206.189.142.31/",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://206.189.142.31/"
+                }
+            ]
+        },
+        {
+            "name": "CSP Bypass",
+            "severity": "Low",
+            "description": "CSP missing",
+            "owasp_id": "A05:2021-Security Misconfiguration",
+            "owasp_reference": "https://owasp.org/www-project-secure-headers/",
+            "affected_assets": [
+                {
+                    "url": "http://206.189.142.31/",
+                    "action_url": "http://206.189.142.31/",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://206.189.142.31/"
+                }
+            ]
+        }
+    ]
+}

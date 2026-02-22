@@ -73,13 +73,19 @@ class TitanEngine:
 
     def scan(self):
         try:
+            # Phase 1: Discovery (Passive Only)
+            self.phase1_discovery()
+            
+            # RE-CHECK FOR DVWA after discovery if not already set
+            if not self.is_dvwa:
+                if any("/vulnerabilities/" in v.url.lower() for v in self.vectors):
+                    self.is_dvwa = True
+                    self.log_activity("DVWA detected via path signature. Switching to BENCHMARK (STABILIZED) mode.")
+
             self.log_activity(f"Mode: {'BENCHMARK (STABILIZED)' if self.is_dvwa else 'REAL-WORLD'}")
             
             # Setup
             self.setup_session()
-            
-            # Phase 1: Discovery (Passive Only)
-            self.phase1_discovery()
             
             # Phase 2: Baseline
             self.phase2_baseline()

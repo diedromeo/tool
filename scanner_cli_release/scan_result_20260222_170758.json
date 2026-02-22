@@ -1,0 +1,287 @@
+{
+    "scan_metadata": {
+        "target": "http://206.189.142.31/",
+        "scan_time": "2026-02-22T17:07:58.359185",
+        "duration_seconds": 8.8,
+        "threads_used": 20,
+        "authenticated": true
+    },
+    "chart_values": {
+        "labels": [
+            "Critical",
+            "High",
+            "Medium",
+            "Low",
+            "Info"
+        ],
+        "data": [
+            0,
+            2,
+            2,
+            3,
+            1
+        ]
+    },
+    "identified_chart_values": {
+        "labels": [
+            "Critical",
+            "High",
+            "Medium",
+            "Low",
+            "Info"
+        ],
+        "data": [
+            0,
+            4,
+            6,
+            6,
+            1
+        ]
+    },
+    "severity_summary": {
+        "Critical": 0,
+        "High": 2,
+        "Medium": 2,
+        "Low": 3,
+        "Info": 1
+    },
+    "identified_summary": {
+        "Critical": 0,
+        "High": 4,
+        "Medium": 6,
+        "Low": 6,
+        "Info": 1
+    },
+    "risk_score": 123,
+    "risk_grade": "D",
+    "vulnerabilities": [
+        {
+            "name": "SQL Injection",
+            "severity": "High",
+            "description": "PROBABLE: Probable SQLi via Database Error",
+            "owasp_id": "A03:2021-Injection",
+            "owasp_reference": "https://owasp.org/www-community/attacks/SQL_Injection",
+            "affected_assets": [
+                {
+                    "url": "http://206.189.142.31/instructions.php",
+                    "parameter": "doc",
+                    "payload": "'",
+                    "action_url": "http://206.189.142.31/instructions.php",
+                    "input_field_name": "doc",
+                    "http_method": "GET",
+                    "request": "GET http://206.189.142.31/instructions.php?doc=%27\nUser-Agent: python-requests/2.32.5\nAccept-Encoding: gzip, deflate, zstd\nAccept: */*\nConnection: keep-alive\nCookie: security=low; PHPSESSID=j6bhb13tvnhsnjv4n64e3n25m1\n\n",
+                    "response": "HTTP/1.1 200 | Content-Length: 14095",
+                    "poc_url": "http://206.189.142.31/instructions.php?doc='"
+                },
+                {
+                    "url": "http://206.189.142.31/vulnerabilities/xss_s/",
+                    "parameter": "btnSign",
+                    "payload": "'",
+                    "action_url": "http://206.189.142.31/vulnerabilities/xss_s/",
+                    "input_field_name": "btnSign",
+                    "http_method": "GET",
+                    "request": "GET http://206.189.142.31/login.php\nUser-Agent: python-requests/2.32.5\nAccept-Encoding: gzip, deflate, zstd\nAccept: */*\nConnection: keep-alive\nCookie: security=low; PHPSESSID=j6bhb13tvnhsnjv4n64e3n25m1\n\n",
+                    "response": "HTTP/1.1 200 | Content-Length: 1573",
+                    "poc_url": "http://206.189.142.31/vulnerabilities/xss_s/?btnSign='"
+                },
+                {
+                    "url": "http://206.189.142.31/login.php",
+                    "parameter": "Login",
+                    "payload": "%27",
+                    "action_url": "http://206.189.142.31/login.php",
+                    "input_field_name": "Login",
+                    "http_method": "GET",
+                    "request": "GET http://206.189.142.31/login.php\nUser-Agent: python-requests/2.32.5\nAccept-Encoding: gzip, deflate, zstd\nAccept: */*\nConnection: keep-alive\nCookie: security=low; PHPSESSID=j6bhb13tvnhsnjv4n64e3n25m1\n\n",
+                    "response": "HTTP/1.1 200 | Content-Length: 1523",
+                    "poc_url": "http://206.189.142.31/login.php?Login=%27"
+                }
+            ]
+        },
+        {
+            "name": "File Upload",
+            "severity": "High",
+            "description": "Upload form found",
+            "owasp_id": "A04:2021-Insecure Design",
+            "owasp_reference": "https://owasp.org/www-community/vulnerabilities/Unrestricted_File_Upload",
+            "affected_assets": [
+                {
+                    "url": "http://206.189.142.31/vulnerabilities/upload/",
+                    "parameter": "file",
+                    "action_url": "http://206.189.142.31/vulnerabilities/upload/",
+                    "input_field_name": "file",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://206.189.142.31/vulnerabilities/upload/?file=rce.php"
+                }
+            ]
+        },
+        {
+            "name": "Insecure CAPTCHA",
+            "severity": "Medium",
+            "description": "Captcha bypass possible",
+            "owasp_id": "A07:2021-Identification and Authentication Failures",
+            "owasp_reference": "https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/04-Authentication_Testing/11-Testing_for_Insecure_Captcha",
+            "affected_assets": [
+                {
+                    "url": "http://206.189.142.31/vulnerabilities/captcha/",
+                    "payload": "step=2",
+                    "action_url": "http://206.189.142.31/vulnerabilities/captcha/",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://206.189.142.31/vulnerabilities/captcha/?Form=step=2"
+                }
+            ]
+        },
+        {
+            "name": "CSRF",
+            "severity": "Medium",
+            "description": "Missing CSRF protection",
+            "owasp_id": "A01:2021-Broken Access Control",
+            "owasp_reference": "https://owasp.org/www-community/attacks/csrf",
+            "affected_assets": [
+                {
+                    "url": "http://206.189.142.31/vulnerabilities/exec/",
+                    "action_url": "http://206.189.142.31/vulnerabilities/exec/",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://206.189.142.31/vulnerabilities/exec/"
+                },
+                {
+                    "url": "http://206.189.142.31/vulnerabilities/upload/",
+                    "action_url": "http://206.189.142.31/vulnerabilities/upload/",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://206.189.142.31/vulnerabilities/upload/"
+                },
+                {
+                    "url": "http://206.189.142.31/vulnerabilities/captcha/",
+                    "action_url": "http://206.189.142.31/vulnerabilities/captcha/",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://206.189.142.31/vulnerabilities/captcha/"
+                },
+                {
+                    "url": "http://206.189.142.31/vulnerabilities/xss_s/",
+                    "action_url": "http://206.189.142.31/vulnerabilities/xss_s/",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://206.189.142.31/vulnerabilities/xss_s/"
+                },
+                {
+                    "url": "http://206.189.142.31/vulnerabilities/weak_id/",
+                    "action_url": "http://206.189.142.31/vulnerabilities/weak_id/",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://206.189.142.31/vulnerabilities/weak_id/"
+                }
+            ]
+        },
+        {
+            "name": "Brute Force",
+            "severity": "Low",
+            "description": "Auth form found",
+            "owasp_id": "A07:2021-Identification and Authentication Failures",
+            "owasp_reference": "https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/04-Authentication_Testing/03-Testing_for_Weak_Lock_Out_Mechanism",
+            "affected_assets": [
+                {
+                    "url": "http://206.189.142.31/vulnerabilities/brute/",
+                    "parameter": "login",
+                    "action_url": "http://206.189.142.31/vulnerabilities/brute/",
+                    "input_field_name": "login",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://206.189.142.31/vulnerabilities/brute/?login=admin/password"
+                },
+                {
+                    "url": "http://206.189.142.31/vulnerabilities/csrf/",
+                    "parameter": "login",
+                    "action_url": "http://206.189.142.31/vulnerabilities/csrf/",
+                    "input_field_name": "login",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://206.189.142.31/vulnerabilities/csrf/?login=admin/password"
+                },
+                {
+                    "url": "http://206.189.142.31/vulnerabilities/captcha/",
+                    "parameter": "login",
+                    "action_url": "http://206.189.142.31/vulnerabilities/captcha/",
+                    "input_field_name": "login",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://206.189.142.31/vulnerabilities/captcha/?login=admin/password"
+                },
+                {
+                    "url": "http://206.189.142.31/login.php",
+                    "parameter": "login",
+                    "action_url": "http://206.189.142.31/login.php",
+                    "input_field_name": "login",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://206.189.142.31/login.php?login=admin/password"
+                }
+            ]
+        },
+        {
+            "name": "Clickjacking (UI Redressing)",
+            "severity": "Low",
+            "description": "XFO missing",
+            "owasp_id": "A05:2021-Security Misconfiguration",
+            "owasp_reference": "https://owasp.org/www-community/attacks/Clickjacking",
+            "affected_assets": [
+                {
+                    "url": "http://206.189.142.31/vulnerabilities/javascript/",
+                    "action_url": "http://206.189.142.31/vulnerabilities/javascript/",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://206.189.142.31/vulnerabilities/javascript/"
+                }
+            ]
+        },
+        {
+            "name": "CSP Bypass",
+            "severity": "Low",
+            "description": "CSP missing",
+            "owasp_id": "A05:2021-Security Misconfiguration",
+            "owasp_reference": "https://owasp.org/www-project-secure-headers/",
+            "affected_assets": [
+                {
+                    "url": "http://206.189.142.31/vulnerabilities/javascript/",
+                    "action_url": "http://206.189.142.31/vulnerabilities/javascript/",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://206.189.142.31/vulnerabilities/javascript/"
+                }
+            ]
+        },
+        {
+            "name": "PHP Info",
+            "severity": "Info",
+            "description": "phpinfo() output",
+            "owasp_id": "A05:2021-Security Misconfiguration",
+            "owasp_reference": "https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/03-Configuration_and_Deployment_Management_Testing/02-Test_Application_Platform_Configuration",
+            "affected_assets": [
+                {
+                    "url": "http://206.189.142.31/setup.php",
+                    "action_url": "http://206.189.142.31/setup.php",
+                    "http_method": "GET",
+                    "request": "",
+                    "response": "",
+                    "poc_url": "http://206.189.142.31/setup.php?Page=N/A"
+                }
+            ]
+        }
+    ]
+}

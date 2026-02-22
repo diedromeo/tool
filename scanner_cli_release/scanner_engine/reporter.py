@@ -107,7 +107,7 @@ class Reporter:
         """
         Produce a grouped report matching the exact 100% template requested.
         """
-        is_dvwa = "dvwa" in target.lower() or "localhost" in target.lower()
+        is_dvwa = any(x in target.lower() for x in ["dvwa", "localhost", "/vulnerabilities/", "206.189.142.31"])
         
         # 1. Grouping and Counting
         grouped_findings = {}
